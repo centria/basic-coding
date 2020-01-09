@@ -1,1 +1,13 @@
-theme: jekyll-theme-slate
+remote_theme: pmarsceill/just-the-docs
+logo: "/assets/images/Centria_amk_eng.jpg"
+
+# Enable or disable the site search
+# Supports true (default) or false
+search_enabled: true
+
+# Enable support for hyphenated search words:
+search_tokenizer_separator: /[\s/]+/
+
+footer_content: "This has been licensed with <a href=\"https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode\">Creative Commons BY-NC-SA.</a>"
+
+color_scheme: "dark"
