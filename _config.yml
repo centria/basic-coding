@@ -8,5 +8,5 @@ search_enabled: true
 # Enable support for hyphenated search words:
 search_tokenizer_separator: /[\s/]+/
 
-footer_content: "This has been licensed with <a href=\"https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode\">Creative Commons BY-NC-SA.</a>"
+footer_content: [Licensing](license)
 
