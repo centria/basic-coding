@@ -15,7 +15,13 @@
 
 $white: #fff;
 
+
+//custom colors
 $centria-red: #e30613;
+$centria-gray: #f8f8f8;
+
+//custom colors end
+
 $grey-dk-000: #959396;
 $grey-dk-100: #5c5962;
 $grey-dk-200: #44434d;
@@ -37,34 +43,36 @@ $blue-100: #2869e6;
 $blue-200: #264caf;
 $blue-300: #183385;
 
-//$green-000: #41d693;
-//$green-100: #11b584;
-//$green-200: #009c7b;
-//$green-300: #026e57;
+$green-000: #41d693;
+$green-100: #11b584;
+$green-200: #009c7b;
+$green-300: #026e57;
 
-//$yellow-000: #ffeb82;
-//$yellow-100: #fadf50;
-//$yellow-200: #f7d12e;
-//$yellow-300: #e7af06;
+$yellow-000: #ffeb82;
+$yellow-100: #fadf50;
+$yellow-200: #f7d12e;
+$yellow-300: #e7af06;
 
-//$red-000: #f77e7e;
-//$red-100: #f96e65;
-//$red-200: #e94c4c;
-//$red-300: #dd2e2e;
+$red-000: #f77e7e;
+$red-100: #f96e65;
+$red-200: #e94c4c;
+$red-300: #dd2e2e;
 
-//$body-background-color: $white;
-//$sidebar-color: $grey-lt-000;
-//$search-background-color: $white;
-//$table-background-color: $white;
-//$code-background-color: $grey-lt-000;
 
-//$body-text-color: $grey-dk-100;
-//$body-heading-color: $grey-dk-300;
-//$search-result-preview-color: $grey-dk-000;
-//$nav-child-link-color: $grey-dk-100;
-//$link-color: $purple-000;
-//$btn-primary-color: $purple-100;
-//$base-button-color: #f7f7f7;
+// edit these for colors
+$body-background-color: $centria-grey;
+$sidebar-color: $centria-red;
+$search-background-color: $white;
+$table-background-color: $white;
+$code-background-color: $grey-lt-000;
+
+$body-text-color: $grey-dk-100;
+$body-heading-color: $grey-dk-300;
+$search-result-preview-color: $grey-dk-000;
+$nav-child-link-color: $grey-dk-100;
+$link-color: $purple-000;
+$btn-primary-color: $purple-100;
+$base-button-color: #f7f7f7;
 
 ////
 //// Spacing
