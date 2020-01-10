@@ -8,5 +8,4 @@ search_enabled: true
 # Enable support for hyphenated search words:
 search_tokenizer_separator: /[\s/]+/
 
-footer_content: [Licensing](license)
-
+footer_content: "Copyright &copy; 2019- Heikki Ahonen. More information about <a href=\"https://centria.github.io/basic-coding/license\">licensing here.</a>"
