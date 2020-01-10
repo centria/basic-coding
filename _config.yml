@@ -9,4 +9,4 @@ search_enabled: true
 search_tokenizer_separator: /[\s/]+/
 
 footer_content: "This has been licensed with <a href=\"https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode\">Creative Commons BY-NC-SA.</a>"
-s
+

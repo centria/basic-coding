@@ -15,20 +15,13 @@
 
 $white: #fff;
 
-
-//custom colors
-$centria-red: #e30613;
-$centria-gray: #f8f8f8;
-
-//custom colors end
-
 $grey-dk-000: #959396;
 $grey-dk-100: #5c5962;
 $grey-dk-200: #44434d;
 $grey-dk-250: #302d36;
 $grey-dk-300: #27262b;
 
-$grey-lt-000: #f5f6fa;
+$grey-lt-000: #f8f8f8;
 $grey-lt-100: #eeebee;
 $grey-lt-200: #ecebed;
 $grey-lt-300: #e6e1e8;
@@ -56,12 +49,12 @@ $yellow-300: #e7af06;
 $red-000: #f77e7e;
 $red-100: #f96e65;
 $red-200: #e94c4c;
-$red-300: #dd2e2e;
+$red-300: #e30615;
 
 
 // edit these for colors
-$body-background-color: $centria-grey;
-$sidebar-color: $centria-red;
+$body-background-color: $grey-lt-000;
+$sidebar-color: $red-300;
 $search-background-color: $white;
 $table-background-color: $white;
 $code-background-color: $grey-lt-000;
