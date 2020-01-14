@@ -55,8 +55,6 @@ in the future. In the exercises, for the first weeks the basic structure is give
 
 As mentioned earlier, programming languages have statements built in them. **Console.WriteLine** is one of them. The statement is quite self-explanatory. It tells the computer to **write a line to the console**. You can change the **Hello World** to any text you wish, as long as the command itself is not changed, and it will work.
 
-**With this information, you should be able to do the first exercise.**
-
 The requirements in the exercises are very precise. If for example the line needs to end with an exclamation mark, it cannot be left out.
 
 Programs are created (and read) command by command, where every command has to be on their own line. In the next example, we are calling **Console.WriteLine** twice, which means the print command is executed twice.
@@ -79,8 +77,6 @@ Hello World!
 ```
 
 
-**With this information, you should be able to do the second exercise.**
-
 To be precise, the command **Console.WriteLine("example text");** prints the text **example text** and a line change. The line change can also be handled with special character **\n**, which is written as a part of the printable text. The example above could also be written as
 
 
@@ -94,7 +90,7 @@ public class Program {
 
 Notice, there is no empty space around the **\n**. In a text, every character, even the empty ones, are part of the text. If you would put space around the line change, the first line would end with an empty character and the second one would start with one.
 
-**With this information, you should be able to do the next exercise.**
+
 
 Sometimes the texts can be quite long, and reading them from a single line can become quite difficult. It is possible to do split the string into multiple pieces and then concatenate them together with the **+** operator. The example above could be
 
@@ -227,7 +223,7 @@ Console.WriteLine("message");
 message
 ```
 
-**With this information, you should be able to do the next exercise.**
+
 
 As we earlier combined multiple lines of text, the string variables can also be concatenated as a part of printing. 
 
@@ -265,7 +261,7 @@ Two
 Three
 ```
 
-**With this information, you should be able to do the next exercise.**
+
 
 ## Reading strings from user
 
@@ -322,5 +318,5 @@ Give a message: <i>I want to print this</i>
 Your message was: I want to print this  
 </code></pre>
 
-**With this information, you should be able to do all the exercises for this part.**
+**You can now do the exercises for printing and reading**
 
