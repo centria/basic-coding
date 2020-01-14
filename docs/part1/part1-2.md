@@ -36,7 +36,7 @@ Produces the following when ran
 ```console
 The magic number: 42
 Life of 3.141592653
-This is awesome: True
+This is awesome: true
 ```
 
 The variable names must be unique inside a code block. You can declare each variable only once. But, as the name **variable** suggests, you can change their value.
