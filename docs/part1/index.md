@@ -17,19 +17,19 @@ Programming languages offer multiple `methods` and `commands` as `built-in`. Thu
 
 Our C# programs require a certain type of body to function:
   
-```Csharp
-    namespace OurFirstProgram  
+<pre><code class="csharp">namespace OurFirstProgram  
+{  
+    class Program  
     {  
-        class Program  
+        public static void Main(string[] args)  
         {  
-            public static void Main(string[] args)  
-            {  
-                // Add your statements here  
-            }  
+            // Add your statements here  
         }  
     }  
-```
-  
+}  
+</code></pre>
+
+    
 There are many parts to this body, of which many are automatically created. We will concentrate on them later during this course.  
 
 For now it is enough for you to know, that in a program there is always code that is not written by the coder. There are some features in all programming languages that are required for the program to run.
