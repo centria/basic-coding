@@ -81,7 +81,7 @@ Hello World!
 
 **With this information, you should be able to do the second exercise.**
 
-To be precise, the command **Console.WriteLine("example text");** prints the text **example text** and line change. The line change can also be handled with special character **\n**, which is written as a part of the printable text. The example above could also be written as
+To be precise, the command **Console.WriteLine("example text");** prints the text **example text** and a line change. The line change can also be handled with special character **\n**, which is written as a part of the printable text. The example above could also be written as
 
 
 ```cs  
@@ -111,7 +111,7 @@ public class Program {
 
 This will print exactly the same information as previously. Compared to the first solution this is more efficient, as we have to call the print command only once. Compared to the second solution, this is easier to read.
 
-So far, everything we have printed have ended in a linechange. If would want to print something but not change the line in the end, we would use **Console.Write("I do not change line");**
+So far, everything we have printed have ended in a line change. If would want to print something but not change the line in the end, we would use **Console.Write("I do not change line");**
 
 Thus, there are two statements for printing:  
 * **Console.WriteLine()** prints the text and changes line
@@ -127,7 +127,7 @@ When we want to print something, we have to give that information as a **paramet
 
 With a semicolon **;** statements are separated from each other. We could write our examples on a one line, but they would not be very readable.
 
-```
+```cs
 Console.Write("Hello "); Console.Write("World!"); Console.Write("\n");  
 ```
 
