@@ -17,17 +17,19 @@ Programming languages offer multiple `methods` and `commands` as `built-in`. Thu
 
 Our C# programs require a certain type of body to function:
   
-<pre><code class="csharp">namespace OurFirstProgram  
-{  
-    class Program  
+  
+```Csharp
+    namespace OurFirstProgram  
     {  
-        public static void Main(string[] args)  
+        class Program  
         {  
-            // Add your statements here  
+            public static void Main(string[] args)  
+            {  
+                // Add your statements here  
+            }  
         }  
     }  
-}  
-</code></pre>
+```
 
     
 There are many parts to this body, of which many are automatically created. We will concentrate on them later during this course.  
