@@ -286,13 +286,12 @@ public class Program {
 This will look something like this with imput **I want to print this**:
 
 
-<pre><code style="console">
-Give a message: <i>I want to print this</i>
+```console
+Give a message: I want to print this
 I want to print this  
-</code></pre>
+```
   
-  
-Now and in the future, the user input is in *italic* in the code examples to make it different from console prints. This is the same example, but with concatenating the input message with **Your message was:**
+This is the same example, but with concatenating the input message with **Your message was:**
 
 
 ```cs  
@@ -313,10 +312,10 @@ public class Program {
 This will look something like this with imput **I want to print this**:
 
 
-<pre><code style="console">
-Give a message: <i>I want to print this</i>
+```console
+Give a message: I want to print this
 Your message was: I want to print this  
-</code></pre>
+```
 
 **You can now do the exercises for printing and reading**
 

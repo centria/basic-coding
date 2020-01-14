@@ -219,12 +219,14 @@ Console.WriteLine("You gave " + doubleValue);
 
 This would print
 
-<pre><code style="console">
-Give integer value: <i>42</i>
+
+```console
+Give integer value: 42
 You gave: 42
-Give double value: <i>4.2</i>
+Give double value: 4.2
 You gave: 4.2
-</code></pre>
+```
+
 
 In the example above, we read both an integer and a double. As you can see, there is no large difference between the methods, only the method name is different, from the coding point of view.
 
