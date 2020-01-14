@@ -9,7 +9,7 @@ nav_order: 2
 The list below does not include everything, but exists to give a guideline for students, what to expect each week. This list may extend as the course goes on.
 
 | Part     |      Goal   |  
-|----------|-------------|
+|:--------:|:------------|
 | 1| You can write simple programs, which read user input and for example basic calculations. You know the terms `variable`, `conditional` or `if`, and `while-loop` and can use them in the programs. |
 | 2| You know the logical operators, such as `and`, `or` and `not` and can use them in conditionals and while-loops. You know what `methods`, `method parameters` and `method return` mean, how to create them and what happens in the program while a method is used. |
 | 3| You can comment your code and understand how naming variables affects the readibility of code. You understand the basics of `arrays` and can use them in your programs, and iterate through an array. |
@@ -20,7 +20,7 @@ The list below does not include everything, but exists to give a guideline for s
 The course is graded on a scale of 0-5. The grade comprises of the amount of exercises done.
 
 | Percentage done | Grade |
-|-----------------|-------|
+|:----------------|:-----:|
 | 90 % or more    |   5   |
 | 80 % - 89,99 %  |   4   |
 | 70 % - 79,99 %  |   3   |
