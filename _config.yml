@@ -10,4 +10,4 @@ search_tokenizer_separator: /[\s/]+/
 
 footer_content: "Copyright &copy; 2020 Heikki Ahonen. More information about <a href=\"/license\">licensing here.</a>"
 
-markdown: GFM
+# markdown: GFM
