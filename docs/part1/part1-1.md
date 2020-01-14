@@ -3,7 +3,7 @@ title: "Printing and reading"
 parent: "Part 1 - The beginning"
 permalink: /part1/1/
 nav_order: 1
-published: trues
+published: true
 ---
 
 # Printing and reading
@@ -94,7 +94,7 @@ public class Program {
 
 Notice, there is no empty space around the **\n**. In a text, every character, even the empty ones, are part of the text. If you would put space around the line change, the first line would end with an empty character and the second one would start with one.
 
-**With this information, you should be able to do the second exercise.**
+**With this information, you should be able to do the next exercise.**
 
 Sometimes the texts can be quite long, and reading them from a single line can become quite difficult. It is possible to do split the string into multiple pieces and then concatenate them together with the **+** operator. The example above could be
 
@@ -127,9 +127,9 @@ When we want to print something, we have to give that information as a **paramet
 
 With a semicolon **;** statements are separated from each other. We could write our examples on a one line, but they would not be very readable.
 
-**
+```
 Console.Write("Hello "); Console.Write("World!"); Console.Write("\n");  
-**
+```
 
 This would print out
 
@@ -274,11 +274,53 @@ So far we have used strings that are written directly to the source code. It wou
 
 ```cs  
 public class Program {
-   public static void Main() {      
-    Console.WriteLine("Give a message: ");
+   public static void Main() {  
+    // Print a request for message.
+    Console.Write("Give a message: ");
+    
+    // Assign a new string variable. The value is the command we want to use.
     string message = Console.ReadLine();
+
+    // Print out the message we gave.
     Console.WriteLine(message);
    }
 }
 ```
+
+This will look something like this with imput **I want to print this**:
+
+
+<pre><code style="console">
+Give a message: <i>I want to print this</i>
+I want to print this  
+</code></pre>
+  
+  
+Now and in the future, the user input is in *italic* in the code examples to make it different from console prints. This is the same example, but with concatenating the input message with **Your message was:**
+
+
+```cs  
+public class Program {
+   public static void Main() {  
+    // Print a request for message.
+    Console.Write("Give a message: ");
+    
+    // Assign a new string variable. The value is the command we want to use.
+    string message = Console.ReadLine();
+
+    // Print out the message we gave.
+    Console.WriteLine("Your message was: " + message);
+   }
+}
+```
+
+This will look something like this with imput **I want to print this**:
+
+
+<pre><code style="console">
+Give a message: <i>I want to print this</i>
+Your message was: I want to print this  
+</code></pre>
+
+**With this information, you should be able to do all the exercises for this part.**
 
