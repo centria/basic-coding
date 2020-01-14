@@ -16,20 +16,20 @@ Coding, in brief, is designing and creating `software` or `programs`. The progra
 Programming languages offer multiple `methods` and `commands` as `built-in`. Thus we do not implement everything ourselves. Large part of coding is using the built-in methods for problem solving. The written code is called `source code` and is comprised of `statements` and `expressions`. The code usually read just like any other written text, from left to right, top to bottom.
 
 Our C# programs require a certain type of body to function:
-
+  
 ```C#
-namespace OurFirstProgram
-{
-    class Program
-    {
-        public static void Main(string[] args)
-        {
-            // Add your statements here
-        }
-    }
-}
-```
-
+namespace OurFirstProgram  
+{  
+    class Program  
+    {  
+        public static void Main(string[] args)  
+        {  
+            // Add your statements here  
+        }  
+    }  
+}  
+```  
+  
 There are many parts to this body, of which many are automatically created. We will concentrate on them later during this course.  
 
 For now it is enough for you to know, that in a program there is always code that is not written by the coder. There are some features in all programming languages that are required for the program to run.
