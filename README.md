@@ -1,3 +1,3 @@
-# Basics in Coding Header
+# Basics in coding
 
-Here will be content.
+To make suggestions to this course material, please make a pull request.

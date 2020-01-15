@@ -82,7 +82,7 @@ Earlier it was mentioned, that you can declare a variable only once. This time w
 
 The variables in **C#** are statically typed. This means that once a variable is declared into a certain type, the type does not change*.
 
-\* There is nowadays a **keyword** dynamic in C#, but that is not relevant for basic coding. For our purposes, we treat C# with static typing.
+\* There is nowadays a keyword **dynamic** in C#, but that is not relevant for basic coding. For our purposes, we treat C# with static typing.
 
 For example, this works:
 
