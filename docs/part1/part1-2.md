@@ -236,10 +236,12 @@ If we want to convert a truth value from a string, are two options: **True** and
 
 ```cs
 string truth = "True";
-bool booleanValue = System.Convert.ToBoolean("That is " + truth);
+bool booleanValue = System.Convert.ToBoolean(truth);
+Console.WriteLine(booleanValue);
 
-string truth = "False";
-bool booleanValue = System.Convert.ToBoolean("That is " + truth);
+truth = "False";
+booleanValue = System.Convert.ToBoolean(truth);
+Console.WriteLine(booleanValue);
 ```
 
 Gives us
