@@ -12,7 +12,8 @@ The basic structure of a program is following:
 
 
 ```cs  
-public class Program {  
+public class Program 
+{  
     public static void Main(string[] args) 
     {  
         // Add your statements here  

@@ -113,7 +113,7 @@ if (number >= 1000)
 The number was not equal to zero
 ```
 
-## Else
+## Options, or Else!
 
 If the expression inside the if-clause evaluates as false, the code execution continues to the next statement. This is not always desired, but we want to have an option for the cases, when the if is evaluated as false.
 
@@ -136,4 +136,66 @@ else
 Your number is 5 or less!
 ```
 
-If the conditional statement has an else branch, the code block defined for the else is run, if the if-clause is evaluated as false. Notice the indentation!
+If the conditional statement has an else branch, the code block defined for the else is run, if the if-clause is evaluated as false. Notice the indentation and lines!
+
+## More options, else if
+
+If you want to have more than one option, use **else-if-structure**. It is similar to else, but has an if-conditional. There can be multiple of them, and they come after if, before else.
+
+```cs
+int number = 3;
+
+if (number == 1) 
+{
+    Console.WriteLine("Number is one!");
+} 
+else if (number == 2) 
+{
+    Console.WriteLine("Number is two!");
+} 
+else if (number == 3) 
+{
+    Console.WriteLine("Number is three!");
+} 
+else 
+{
+    Console.WriteLine("Number is something else!");
+}
+```
+
+```console
+Number is three!
+```
+
+In the example above, we first check if the number is equal to 1. As it is not, we move to the first else-if and compare the number to value of 2. As this is not the case, we move forward, and compare our variable's value to 3. As this is true, we execute the code inside the code block, and print the message shown above. We do not go into the else-statement, because an earlier statement evaluated as true.
+
+## Order of comparison
+
+As any code, the comparisons are done in order, from top to bottom, left to right. When we reach a conditional which evaluates to **true**, we execute that block and end comparison.
+
+```cs
+int number = 42;
+
+if (number == 0) 
+{
+    Console.WriteLine("The number is 0.");
+} 
+else if (number > 0) 
+{
+    Console.WriteLine("The number is greater than 0.");
+} 
+else if (number > 2) 
+{
+    Console.WriteLine("The number is greater than 2.");
+} 
+else 
+{
+    Console.WriteLine("The number is smaller than 0.");
+}
+```
+
+```console
+The number is greater than 0.
+```
+
+In the example, the condition **number > 0** is evaluated as **true**, so we execute the code block related to that, and end comparison. Even if the next statement would also evaluate to true, we do not reach that part of the code (and never can).
