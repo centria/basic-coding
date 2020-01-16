@@ -12,7 +12,7 @@ The basic structure of a program is following:
 
 
 ```cs  
-using System
+using System;
 
 public class Program 
 {  
