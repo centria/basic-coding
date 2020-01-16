@@ -6,7 +6,7 @@ nav_order: 4
 published: true
 ---
 
-# Conditionals and and alternatives
+# Conditionals and comparison
 
 So far, our programs have been quite linear, going step-by-step in order, without any options or alternatives. We do often want options in our software, meaning that functionality is dependant on the state of variables in the program. 
 

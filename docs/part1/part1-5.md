@@ -1,5 +1,5 @@
 ---
-title: "While and loop"
+title: "Repetition"
 parent: "Part 1 - The beginning"
 permalink: /part1/5/
 nav_order: 5
