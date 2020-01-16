@@ -179,19 +179,21 @@ string camelCase = "Camels are nice"; // Does not compile, the variable name is 
 In the previous part we learned how to read a **string variable** from the user.
 
 ```cs  
-public class Program {
-   public static void Main() {  
-    Console.Write("Give a message: ");
-    string message = Console.ReadLine();
-    Console.WriteLine(message);
+public class Program 
+{
+   public static void Main() 
+   {  
+      Console.Write("Give a message: ");
+      string message = Console.ReadLine();
+      Console.WriteLine(message);
    }
 }
 ```
 
-<pre><code style="console">
-Give a message: <i>I want to print this</i>
+```console
+Give a message: I want to print this
 I want to print this  
-</code></pre>
+```
 
 All the other variables, such as integers, doubles or booleans are also read from the user as strings. We have to convert them to the correct type with built in methods.
 

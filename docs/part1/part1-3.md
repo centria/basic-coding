@@ -201,7 +201,7 @@ row 8: Console.WriteLine(second);
 row 9: Console.WriteLine(third);
 ```
 
-In the next console you can see what happens, row by row. The program does not of course print all that, but a console window might be easier to read.
+In the next console you can see what happens, row by row. The program does not of course print all that, but a console window might be easier to read thank plain text.
 
 ```console
 row 1: create variable first 

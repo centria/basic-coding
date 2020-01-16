@@ -13,7 +13,8 @@ The basic structure of a program is following:
 
 ```cs  
 public class Program {  
-    public static void Main(string[] args) {  
+    public static void Main(string[] args) 
+    {  
         // Add your statements here  
     }  
 }   
@@ -24,7 +25,8 @@ The program execution starts from the first line after **public static void Main
 
 ```cs  
 public class Program {  
-    public static void Main(string[] args) {  
+    public static void Main(string[] args) 
+    {  
         Console.WriteLine("Hello World");  
     }  
 }   
@@ -61,7 +63,8 @@ Programs are created (and read) command by command, where every command has to b
 
 ```cs  
 public class Program {  
-    public static void Main(string[] args) {  
+    public static void Main(string[] args) 
+    {  
         Console.WriteLine("Hello World!");
         Console.WriteLine("... and Pietarsaari!"); 
     }  
@@ -82,7 +85,8 @@ To be precise, the command **Console.WriteLine("example text");** prints the tex
 
 ```cs  
 public class Program {  
-    public static void Main(string[] args) {  
+    public static void Main(string[] args) 
+    {  
         Console.WriteLine("Hello World!\n... and Pietarsaari!"); 
     }  
 }   
@@ -97,7 +101,8 @@ Sometimes the texts can be quite long, and reading them from a single line can b
 
 ```cs  
 public class Program {  
-    public static void Main(string[] args) {  
+    public static void Main(string[] args) 
+    {  
         Console.WriteLine("Hello World!\n" + 
         "... and Pietarsaari!"); 
     }  
@@ -142,9 +147,13 @@ Code consists of **Code blocks**. Code block means part of the code, separated w
 For example, the line **public static void Main(string[] args)** that defines where to start the program, defines a block of what to run when the program is started.
 
 ```cs
-public class Program {  // Here starts block for the class
+public class Program 
+{  // Here starts block for the class
 
-  public static void Main(string[] args) {  // Here starts block for the main
+  public static void Main(string[] args) 
+  {  // Here starts block for the main
+
+  // Your code would be here
 
   } // The main block ends
  
@@ -171,8 +180,10 @@ Even though there is no style restraint from computer or the language we have ch
 We could write our program as  
 
 ```cs  
-public class Program {  
-    public static void Main(string[] args) {  
+public class Program 
+{  
+    public static void Main(string[] args) 
+    {  
         Console.WriteLine("Hello World!\n" + 
         "... and Pietarsaari!"); 
     }  
@@ -269,17 +280,19 @@ So far we have used strings that are written directly to the source code. It wou
 
 
 ```cs  
-public class Program {
-   public static void Main() {  
+public class Program 
+{
+    public static void Main() 
+    {  
     // Print a request for message.
     Console.Write("Give a message: ");
-    
+
     // Assign a new string variable. The value is the command we want to use.
     string message = Console.ReadLine();
 
     // Print out the message we gave.
     Console.WriteLine(message);
-   }
+    }
 }
 ```
 
@@ -295,8 +308,10 @@ This is the same example, but with concatenating the input message with **Your m
 
 
 ```cs  
-public class Program {
-   public static void Main() {  
+public class Program 
+{
+   public static void Main() 
+   {  
     // Print a request for message.
     Console.Write("Give a message: ");
     
