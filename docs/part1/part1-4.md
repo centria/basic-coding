@@ -199,3 +199,119 @@ The number is greater than 0.
 ```
 
 In the example, the condition **number > 0** is evaluated as **true**, so we execute the code block related to that, and end comparison. Even if the next statement would also evaluate to true, we do not reach that part of the code (and never can).
+
+## Conditional statement and boolean variable
+
+The evaluated value of an expression inside the if-clause's brackets must be a **boolean**. Boolean is a representation of a truth-value, and is either **true** or **false**.
+
+```cs
+bool truthValue = true;
+Console.WriteLine("The value of truthValue is " + truthValue);
+```
+
+```console
+The value of truthValue is True
+```
+
+Or with a conditional,
+
+```cs
+bool truthValue = true;
+if (truthValue)
+{
+    Console.WriteLine("This is awesome!");
+}
+```
+```console
+This is awesome!
+````
+
+Comparison can be used outside statements, as well. Then the value of a boolean is stored into a boolean variable until further use.
+
+
+```cs
+int first = 1;
+int second = 3;
+bool isFirstLargerThanSecond = 1 > 3;
+```
+
+Now the value of **isFirstLargerThanSecond** is **false**. Let's change the example a bit and continue:
+
+```cs
+int first = 1;
+int second = 3;
+bool isFirstSmallerThanSecond = 1 < 3;
+
+if (isFirstSmallerThanSecond)
+{
+    Console.WriteLine("1 is less than 3!");
+}
+```
+
+```console
+1 is less than 3!
+```
+
+## Remainder
+
+Remainder is not used as frequently, but is a nice tool, especially if we want to check if something is divisible by some other number.
+
+```cs
+int remainder = 7 % 2;
+Console.WriteLine(remainder); // prints 1
+Console.WriteLine(5 % 3); // prints 2
+Console.WriteLine(7 % 4); // prints 3
+Console.WriteLine(8 % 4); // prints 0
+Console.WriteLine(1 % 2); // prints 1
+```
+
+As remainder is an operation similar to other calculations, we can use it in for example an if clause
+
+```cs
+string userInput = Console.ReadLine();
+
+int intValue = Convert.ToInt32(userInput);
+
+
+if (number % 400 == 0) 
+{
+    System.out.println("The number " + number + " is divisible by four hundred");
+} 
+else 
+{
+    System.out.println("The number " + number + " is not divisible by four hundred");
+}
+```
+
+## Conditionals an equality of variables
+
+In most programming languages, including C#, string is of reference type, and for example integer, boolean and double are value types. 
+
+In some of the programming languages, this means that string comparison has to be done differently from other variables. **C# is more forgiving.** We can compare two strings with **==** operator, at least in this point of the course.
+
+For example the following works in C#, while in most other languages it would not:
+
+```cs
+string a = "word";
+string b = "word";
+Console.WriteLine(a == b);
+```
+
+```console
+True
+```
+
+Other way to compare strings, is with **equals-method**. The method compares the value of an object. We will go deeper into that later, now it is enough for you to know such a method exists.
+
+```cs
+string a = "word";
+string b = "word"; 
+
+Console.WriteLine(a.Equals(b));
+```
+
+```console
+True
+```
+
+**You can now do the exercises for conditionals**

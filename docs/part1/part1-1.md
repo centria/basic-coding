@@ -12,6 +12,8 @@ The basic structure of a program is following:
 
 
 ```cs  
+using System
+
 public class Program 
 {  
     public static void Main(string[] args) 

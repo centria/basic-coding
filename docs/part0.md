@@ -28,4 +28,4 @@ The course is graded on a scale of 0-5. The grade comprises of the amount of exe
 | 50 % - 59,99 %  |   1   |
 | Less than 50 %  |   0   |
 
-At the end of the course, there is also an exam with **pass / fail ** grading. This does not affect the grade but is to ensure that you have done the exercises yourself. More information about the exam will come closer to the exam.
+At the end of the course, there is also an exam with **pass / fail** grading. This does not affect the grade but is to ensure that you have done the exercises yourself. More information about the exam will come closer to the exam.

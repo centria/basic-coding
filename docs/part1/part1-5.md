@@ -6,4 +6,4 @@ nav_order: 5
 published: true
 ---
 
-# While structure
+# Repetition
