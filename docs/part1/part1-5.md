@@ -157,13 +157,13 @@ Console.WriteLine("All done!");
 
 ```console
 Do you want to continue?
-yes
+> yes
 Let's keep going!
 Do you want to continue?
-totally
+> totally
 Let's keep going!
 Do you want to continue?
-no
+> no
 All done!
 ```
 
@@ -187,13 +187,13 @@ Console.WriteLine("All done!");
 
 ```console
 Input an integer, 0 quits
-5
+> 5
 You gave 5
 Input an integer, 0 quits
--2
+> -2
 You gave -2
 Input an integer, 0 quits
-0
+> 0
 All done!
 ```
 
@@ -226,13 +226,13 @@ Console.WriteLine("All done!");
 
 ```console
 Input a positive integer, 0 quits
-12
+> 12
 You gave 12
 Input a positive integer, 0 quits
--2
+> -2
 Not a positive integer!
 Input a positive integer, 0 quits
-0
+> 0
 All done!
 ```
 
@@ -440,19 +440,19 @@ while (true)
 
 ```console
 Input an integer, 0 quits
-5
+> 5
 Amount of ones: 0
 Input an integer, 0 quits
-1
+> 1
 Amount of ones: 1
 Input an integer, 0 quits
-1
+> 1
 Amount of ones: 1
 Input an integer, 0 quits
-2
+> 2
 Amount of ones: 0
 Input an integer, 0 quits
-0
+> 0
 ```
 
 Now the program works, but not the way we intended. As the "storage" is created inside the loop, whenever the loop loops, the variable is created again.
@@ -490,15 +490,15 @@ Console.WriteLine("Amount of ones: " + countOnes);
 
 ```console
 Input an integer, 0 quits
-5
+> 5
 Input an integer, 0 quits
-1
+> 1
 Input an integer, 0 quits
-1
+> 1
 Input an integer, 0 quits
--1
+> -1
 Input an integer, 0 quits
-0
+> 0
 Amount of ones: 2
 ```
 
