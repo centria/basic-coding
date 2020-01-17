@@ -81,7 +81,7 @@ In our example, we combined a string, value of our variable, and another string.
 
 ```cs
 Console.WriteLine("The magic number is " + 42); 
-Console.WriteLine(42 + " is the magic number."; 
+Console.WriteLine(42 + " is the magic number."); 
 ```
 
 ```console

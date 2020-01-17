@@ -29,7 +29,7 @@ On the other hand, we could make a part of our code unreachable:
 
 ```cs
 Console.WriteLine("Hello world!");
-if (true) 
+if (false) 
 {
     Console.WriteLine("This is never printed!");
 }
@@ -232,7 +232,7 @@ Comparison can be used outside statements, as well. Then the value of a boolean 
 ```cs
 int first = 1;
 int second = 3;
-bool isFirstLargerThanSecond = 1 > 3;
+bool isFirstLargerThanSecond = first > second;
 ```
 
 Now the value of **isFirstLargerThanSecond** is **false**. Let's change the example a bit and continue:
@@ -240,7 +240,7 @@ Now the value of **isFirstLargerThanSecond** is **false**. Let's change the exam
 ```cs
 int first = 1;
 int second = 3;
-bool isFirstSmallerThanSecond = 1 < 3;
+bool isFirstSmallerThanSecond = first < second;
 
 if (isFirstSmallerThanSecond)
 {
@@ -270,10 +270,10 @@ As remainder is an operation similar to other calculations, we can use it in for
 ```cs
 string userInput = Console.ReadLine();
 
-int intValue = Convert.ToInt32(userInput);
+int number = Convert.ToInt32(userInput);
 
 
-if (number % 400 == 0) 
+if ((number % 400) == 0) 
 {
     System.out.println("The number " + number + " is divisible by four hundred");
 } 
