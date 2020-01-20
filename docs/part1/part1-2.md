@@ -156,7 +156,7 @@ There are certain restrictions to naming variables, as well as conventions. The 
 * start with a **lowercase letter**
 * shouldBeWrittenInCamelCase
 
-The variables in C# are usually written with [camelCase](https://en.wikipedia.org/wiki/Camel_case). This means the variable name starts with a small letter, contains no other characters than letters and numbers and contains no punctuation or spaces. 
+The variables in C# are usually written with [**camelCase (here)**](https://en.wikipedia.org/wiki/Camel_case). This means the variable name starts with a small letter, contains no other characters than letters and numbers and contains no punctuation or spaces. 
 
 Even though **snake_case** with underscore would be a valid variable name, such naming convention is not recommended, and should **not** be used during this course.
 
@@ -251,6 +251,6 @@ True
 False
 ```
 
-The **Convert Class** can be used to convert strings into multiple other types as well. We will handle them as they come, but for the curious, the full list can be [found here](https://docs.microsoft.com/en-us/dotnet/api/system.convert?view=netframework-4.8).
+The **Convert Class** can be used to convert strings into multiple other types as well. We will handle them as they come, but for the curious, the full list can be [**found here**](https://docs.microsoft.com/en-us/dotnet/api/system.convert?view=netframework-4.8).
 
 **You can now do the exercises for variables**

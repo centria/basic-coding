@@ -121,7 +121,7 @@ Thus, there are two statements for printing:
 * **Console.WriteLine()** prints the text and changes line
 * **Console.Write()** prints the text but keeps on the same line   
 
-In the printed text, there can be special characters, such as **\n**. There are also [other special characters](https://en.wikipedia.org/wiki/Escape_character) you might want to familiarise yourself with.
+In the printed text, there can be special characters, such as **\n**. There are also [**other special characters (here)**](https://en.wikipedia.org/wiki/Escape_character) you might want to familiarise yourself with.
 
 ## Parameters for a command
 
@@ -178,7 +178,7 @@ As you can see, the single line comment is started with **//** but does not have
 
 ## Code style
 
-Even though there is no style restraint from computer or the language we have chosen, there is great advantage in keeping the code neat and easy to read. For every language, there are widely spread [coding conventions](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/inside-a-program/coding-conventions). Indentation and variable naming conventions are the most useful ones to keep in mind.
+Even though there is no style restraint from computer or the language we have chosen, there is great advantage in keeping the code neat and easy to read. For every language, there are widely spread [**coding conventions (here)**](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/inside-a-program/coding-conventions). Indentation and variable naming conventions are the most useful ones to keep in mind.
 
 We could write our program as  
 
