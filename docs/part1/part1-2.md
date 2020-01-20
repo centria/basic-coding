@@ -214,7 +214,7 @@ Console.Write("Give double value: ");
 userInput = Console.ReadLine();
 
 // Convert string to double type
-int doubleValue = Convert.ToDouble(userInput);
+double doubleValue = Convert.ToDouble(userInput);
 
 Console.WriteLine("You gave " + doubleValue);
 ```
