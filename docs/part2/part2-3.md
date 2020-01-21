@@ -715,3 +715,5 @@ The output of the method call **MultiplicationTable(3)**, for instance, looks li
 4 5 6
 7 8 9
 ```
+
+**You can now do the exercises for methods**
