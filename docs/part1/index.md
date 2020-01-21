@@ -11,7 +11,7 @@ has_toc: true
 
 During this course, you will learn how to do basic programs. The course starts from the very beginning and goes deeper as we progress. Before we start coding, we have to know what coding is, exactly.  
 
-Coding, in brief, is designing and creating **software** or **programs**. The programs are (usually) written in human-readable language, known as **programming languages**. There are hundreds of programming languages available, but on this course we concentrate on **C#**. You can find more information about the language from the [here](https://docs.microsoft.com/en-us/dotnet/csharp/tour-of-csharp/). The language has good documentation, and you will find necessary information from there, later during the course.
+Coding, in brief, is designing and creating **software** or **programs**. The programs are (usually) written in human-readable language, known as **programming languages**. There are hundreds of programming languages available, but on this course we concentrate on **C#**. You can find more information about the language from the [**here**](https://docs.microsoft.com/en-us/dotnet/csharp/tour-of-csharp/). The language has good documentation, and you will find necessary information from there, later during the course.
 
 Programming languages offer multiple **methods** and **commands** as **built-in**. Thus we do not implement everything ourselves. Large part of coding is using the built-in methods for problem solving. The written code is called **source code** and is comprised of **statements** and **expressions**. The code usually read just like any other written text, from left to right, top to bottom.
 
