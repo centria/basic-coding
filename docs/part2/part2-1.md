@@ -58,8 +58,8 @@ int first = 1;
 int second = 2;
 
 // Assigning the user input to the variables
-first = Convert.ToInt32(Console.WriteLine());
-second = Convert.ToInt32(Console.WriteLine());
+first = Convert.ToInt32(Console.ReadLine());
+second = Convert.ToInt32(Console.ReadLine());
 
 // Identifying the operation and declaring a variable for the result
 int product = first * second;
@@ -129,8 +129,8 @@ Conditional functionality can be combined with other solution patterns. Let's lo
 
 ```cs
  // Declaring the variables and assigning user input to them
-int first = Convert.ToInt32(Console.WriteLine());
-int second = Convert.ToInt32(Console.WriteLine());
+int first = Convert.ToInt32(Console.ReadLine());
+int second = Convert.ToInt32(Console.ReadLine());
 
 // Identifying the operation and declaring variable for the result
 int sum = first + second;
