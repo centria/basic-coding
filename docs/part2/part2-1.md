@@ -71,8 +71,8 @@ Console.WriteLine("The product of " + first + " and " + second + " is " + produc
 In the example above, the program has been implemented so that the variables are declared first after which values are read into them. Variable declaration and the reading of values into them can also be combined into one.
 
 ```cs
-int first = Convert.ToInt32(Console.WriteLine());
-int second = Convert.ToInt32(Console.WriteLine());
+int first = Convert.ToInt32(Console.ReadLine());
+int second = Convert.ToInt32(Console.ReadLine());
 
 int product = first * second;
 
