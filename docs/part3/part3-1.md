@@ -3,7 +3,7 @@ title: "Discovering errors"
 parent: "Part 3 - Arrays"
 permalink: /part3/1/
 nav_order: 1
-published: true
+published: false
 ---
 
 We've so far been practicing the fundamentals of the language, such as variables, conditionals, loops, and methods. Let's now move on to look at some of the factors affecting the understandability of programs, and how errors are found.
