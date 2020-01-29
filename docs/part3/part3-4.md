@@ -254,3 +254,5 @@ else
 
 Age average: 1.6666666666666667
 ```
+
+**You can now do the exercises for strings**
