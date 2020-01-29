@@ -186,8 +186,8 @@ Numbering places, i.e., indexing, always begins with zero. The list's first valu
 Example list called numbers could contain something like this...
 
 |i|0|1|2|3|4|5|6|...|
-|--:|--|--|--|--|--|--|--|--|
-|value |6|1|2| 4| 4| 3||
+|-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
+|value|6|1|2| 4| 4| 3||
 
 In the list above, the first value is 6 and the second value 1. If a new value was added to the list by calling the **Add method** of numbers with 8 as parameter, the number 8 would be placed at index 6. It would be the seventh number in the list.
 
@@ -196,8 +196,8 @@ numbers.Add(8);
 ```
 
 |i|0|1|2|3|4|5|6|...|
-|--:|--|--|--|--|--|--|--|--|
-|value |6|1|2| 4| 4| 3|8|
+|-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
+|value|6|1|2| 4| 4| 3|8|
 
 Similarly, by calling the method **numbers[index]** with the parameter 4 the fifth number in the list would be retrieved.
 
