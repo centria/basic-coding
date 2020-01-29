@@ -2,7 +2,7 @@
 title: "Lists"
 parent: "Part 3 - Lists"
 permalink: /part3/2/
-nav_order: 1
+nav_order: 2
 published: false
 ---
 
