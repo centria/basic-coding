@@ -1,6 +1,6 @@
 ---
 title: "Discovering errors"
-parent: "Part 3 - Arrays"
+parent: "Part 3 - Lists and Arrays"
 permalink: /part3/1/
 nav_order: 1
 published: true

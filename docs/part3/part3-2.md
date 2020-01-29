@@ -1,9 +1,9 @@
 ---
 title: "Lists"
-parent: "Part 3 - Lists"
+parent: "Part 3 - Lists and Arrays"
 permalink: /part3/2/
 nav_order: 2
-published: false
+published: true
 ---
 
 # Lists
