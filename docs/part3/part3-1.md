@@ -51,7 +51,7 @@ else
 }
 ```
 
-Can you spot what is wrong* with the code above? 
+Question: Can you spot what is wrong with the code above? We will find the error later on in this part. The answer is also at the bottom of the page. DON'T SPOIL YOURSELF, read the whole part first!
 
 Perceptual blindness is something that one cannot be eliminated completely. However, there are ways by which a programmer can lessen its effect - the first one being taking breaks, which requires that work is begun early. Code comments, proper naming of things, and "debugging" prints are additional examples of things that are also helpful.
 
@@ -146,7 +146,7 @@ else
 }
 ```
 
-Had the program container an error, print debugging could have been used to unravel its functionality by adding print statements in the appropriate places. The example below contains one possible example of a program containing print-debug statements.
+Had the program contained an error, print debugging could have been used to unravel its functionality by adding print statements in the appropriate places. The example below contains one possible example of a program containing print-debug statements.
 
 ```cs
 
@@ -186,4 +186,4 @@ When a program is executed multiple times with appropriate inputs the hidden err
 
 **There are no exercises. Move along.**
 
-*The last variable in the code is called **value**, when it should be called **values**. We are calling for a variable which was defined inside the loop, rather than the one we want.
+Answer: The last variable in the code is called **value**, when it should be called **values**. We are calling for a variable which was defined inside the loop, rather than the one we want.
