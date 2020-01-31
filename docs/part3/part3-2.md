@@ -201,6 +201,36 @@ numbers.Add(8);
 
 Similarly, by calling the method **numbers[index]** with the parameter 4 the fifth number in the list would be retrieved.
 
+Each tool offered by C# has a name and location. The program can use a tool after it has been imported with the **using** command. The command is given the location and the name of the desired class. For example, the use of a **Console** from System necessitates placing the command **using System;** to the top of the program.
+
+```cs
+using System;
+
+public class Program 
+{  
+    public static void Main(string[] args) 
+    {  
+        Console.WriteLine("Console has been imported");
+    }  
+}   
+```
+
+The same usually applies to all C# classes. **Console** is called directly from system, so we can import it with just **using System;**. If we want to use Lists, we have to go deeper, and use **using System.Collections.Generic;**.
+
+```cs
+using System;
+using System.Collections.Generic;
+
+public class Program 
+{  
+    public static void Main(string[] args) 
+    {  
+        Console.WriteLine("Console has been imported");
+        List<string> list = new List<string>();
+        list.Add("List can be now used, too.");
+    }  
+}   
+```
 
 ## Iterating Over a List
 
