@@ -40,4 +40,4 @@ An object is always instantiated by calling a method that created an object, i.e
 
 A class lays out a blueprint for any objects that are instantiated from it. Let's draw from an analogy from outside the world of computers. Detached houses are most likely familiar to most, and we can safely assume the existence of drawings somewhere that determine what exactly a detached house is to be like. A class is a blueprint. In other words, it specifies what kinds of objects can be instantiated from it:
 
-![House blueprints]("/assets/images/houses.jpg")
+![House blueprints](https://github.com/centria/basic-coding/raw/master/assets/images/houses.jpg)
