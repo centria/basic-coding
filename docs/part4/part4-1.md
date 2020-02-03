@@ -16,7 +16,7 @@ Once concepts related to a given problem have been identified, we can also begin
 
 ## Classes and objects
 
-We've already used some of the classes and objects provided by C#. A class defines the attributes of objects, i.e., the information related to them (properties), and their commands, i.e., their methods. The values of instance (i.e., object) variables define the internal state of an individual object, whereas methods define the functionality it offers.
+We've already used some of the classes and objects provided by C#. A class defines the attributes of objects, i.e., the information related to them (instance variables and properties), and their commands, i.e., their methods. The values of instance (i.e., object) variables define the internal state of an individual object, whereas methods define the functionality it offers.
 
 A **Method** is a piece of source code written inside a class that's been named and has the ability to be called. A method is always part of some class and is often used to modify the internal state of an object instantiated from a class.
 
@@ -41,3 +41,14 @@ An object is always instantiated by calling a method that created an object, i.e
 A class lays out a blueprint for any objects that are instantiated from it. Let's draw from an analogy from outside the world of computers. Detached houses are most likely familiar to most, and we can safely assume the existence of drawings somewhere that determine what exactly a detached house is to be like. A class is a blueprint. In other words, it specifies what kinds of objects can be instantiated from it:
 
 ![House blueprints](https://github.com/centria/basic-coding/raw/master/assets/images/houses.jpg)
+
+Individual objects, detached houses in this case, are all created based on the same blueprints - they're instances of the same class. The states of individual objects, i.e., their attributes (such as the wall color, the building material of the roof, the color of its foundations, the doors' materials and color, ...) may all vary, however. The following is an "object of a detached-house class":
+
+![Single house](https://github.com/centria/basic-coding/raw/master/assets/images/singlehouse.jpg)
+
+## Creating Classes
+
+A class specifies what the objects instantiated from it are like.
+
+* The **object's variables (instance variables)** specify the internal state of the object
+* The **object's methods** specify what the object does
