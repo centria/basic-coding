@@ -52,3 +52,67 @@ A class specifies what the objects instantiated from it are like.
 
 * The **object's variables (instance variables)** specify the internal state of the object
 * The **object's methods** specify what the object does
+
+We'll now familiarize ourselves with creating our own classes and defining the variable that belong to them.
+
+A class is defined to represent some meaningful entity, where a "meaningful entity" often refers to a real-world object or concept. If a computer program had to process personal information, it would perhaps be meaningful to define a seperate class Person consisting of methods and attributes related to an individual.
+
+Let's begin. The example is using the **sandbox** from the exercises, so you can follow the instructions along. We'll assume that we have a project template that has an empty main program, called 
+**Program.cs**. 
+
+```cs
+using System;
+namespace sandbox
+{
+  class Program
+  {
+    static void Main(string[] args)
+    {
+
+    }
+  }
+}
+```
+
+The next part follows [**this material**](https://docs.microsoft.com/en-us/dotnet/core/tutorials/with-visual-studio-code#add-a-class) for creating new classes in Visual Studio Code. You can, of course, use any editor you wish. This course material is intended for Visual Studio Code.
+
+### Creating a new class
+
+1. To add a new class, right click in the VSCode Explorer and select New File. This adds a new file to the folder you have open in VSCode.
+
+As with variables and methods, the name of a class should be as descriptive as possible. It's usual for a class to live on and take on a different form as a program develops. As such, the class may have to be renamed at some later point
+
+2. Name your file **Person.cs**. You must save it with a .cs extension at the end for it to be recognized as a csharp file.
+
+Make sure the file Person.cs is in the same folder as **Program.cs**
+
+3. Add this code to your file:
+
+```cs
+using System;
+
+namespace sandbox
+{
+  public class Person
+  {
+    
+  }
+}
+```
+
+A class defines the attributes and behaviors of objects that are created from it. Let's decide that each person object has a name and an age. It's natural to represent the name as a string, and the age as an integer. We'll go ahead and add these to our blueprint:
+
+```cs
+public class Person {
+    private string name;
+    private int age;
+}
+```
+
+We specify above that each object created from the Person class has a name and an age. Variables defined inside a class are called instance variables, or object fields or object attributes. Other names also seem to exist.
+
+Instance variables are written on the lines following the class definition public class Person {. Each variable is preceded by the keyword private. The keyword private means that the variables are "hidden" inside the object. This is known as encapsulation.
+
+In the class diagram, the variables associated with the class are defined as "variableName: variableType". The minus sign before the variable name indicates that the variable is encapsulated (it has the keyword private).
+
+![Class Diagram](https://github.com/centria/basic-coding/raw/master/assets/images/person.jpg)
