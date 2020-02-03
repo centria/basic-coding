@@ -3,7 +3,7 @@ title: "Object Oriented Programming"
 parent: "Part 4 - Object Oriented Programming"
 permalink: /part4/1/
 nav_order: 1
-published: true
+published: false
 ---
 
 # Object Oriented Programming
@@ -111,8 +111,14 @@ public class Person {
 
 We specify above that each object created from the Person class has a name and an age. Variables defined inside a class are called instance variables, or object fields or object attributes. Other names also seem to exist.
 
-Instance variables are written on the lines following the class definition public class Person {. Each variable is preceded by the keyword private. The keyword private means that the variables are "hidden" inside the object. This is known as encapsulation.
+Instance variables are written on the lines following the class definition **public class Person {**. Each variable is preceded by the keyword private. The keyword private means that the variables are "hidden" inside the object. This is known as encapsulation.
 
 In the class diagram, the variables associated with the class are defined as "variableName: variableType". The minus sign before the variable name indicates that the variable is encapsulated (it has the keyword private).
 
 ![Class Diagram](https://github.com/centria/basic-coding/raw/master/assets/images/person.jpg)
+
+We have now defined a blueprint -- a class -- for the person object. Each new person object has the variables **name** and **age**, which are able to hold object-specific values. The "state" of a person consists of the values assigned to their name and age.
+
+The person doesn't do anything yet, but we'll get there.
+
+## Defining a Constructor
