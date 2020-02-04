@@ -214,3 +214,65 @@ Going forward, our methods **will not include the static keyword** if they're us
 In addition to the class name, instance variables, and constructor, the class diagram now also includes the method PrintPerson. Since the method comes with the **public** modifier, the method name is prefixed with a plus sign. No parameters are defined for the method, so nothing is put inside the method's parentheses. The method is also marked with information indicating that it does not return a value, here **void**.
 
 ![Class Diagram With Constructror](https://github.com/centria/basic-coding/raw/master/assets/images/printperson.jpg)
+
+The method **PrintPerson** contains one line of code that makes use of the instance variables **name** and **age** -- the class diagram says nothing about its internal implementations. Instance variables are referred to with the prefix this. All of the object's variables are visible and available from within the method.
+
+Let's create three persons in the main program and request them to print themselves:
+
+```cs
+class Program
+{
+  static void Main(string[] args)
+  {
+    Person ada = new Person("Ada");
+    Person antti = new Person("Antti");
+    Person martin = new Person("Martin");
+
+    ada.PrintPerson();
+    antti.PrintPerson();
+    martin.PrintPerson();
+  }
+}
+```
+
+Prints:
+
+```console
+Ada, age 0 years
+Antti, age 0 years
+Martin, age 0 years
+```
+
+## Changing an Instance Variable's Value in a Method
+
+Let's add a method to the previously created person class that increments the age of the person by a year.
+
+```cs
+public class Person
+{
+  private string name;
+  private int age;
+
+  public Person(string initialName)
+  {
+    this.age = 0;
+    this.name = initialName;
+  }
+
+  public void PrintPerson()
+  {
+    Console.WriteLine(this.name + ", age " + this.age + " years");
+  }
+
+  public void GrowOlder()
+  {
+    this.age = this.age + 1;
+  }
+}
+```
+
+The method is written inside the Person class just as the printPerson method was. The method increments the value of the instance variable age by one.
+
+The class diagram also gets an update.
+
+![Class Diagram With Constructror](https://github.com/centria/basic-coding/raw/master/assets/images/persongrow.jpg)
