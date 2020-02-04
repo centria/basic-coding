@@ -213,7 +213,7 @@ Going forward, our methods **will not include the static keyword** if they're us
 
 In addition to the class name, instance variables, and constructor, the class diagram now also includes the method PrintPerson. Since the method comes with the **public** modifier, the method name is prefixed with a plus sign. No parameters are defined for the method, so nothing is put inside the method's parentheses. The method is also marked with information indicating that it does not return a value, here **void**.
 
-![Class Diagram With Constructror](https://github.com/centria/basic-coding/raw/master/assets/images/printperson.jpg)
+![Class Diagram With Print](https://github.com/centria/basic-coding/raw/master/assets/images/printperson.jpg)
 
 The method **PrintPerson** contains one line of code that makes use of the instance variables **name** and **age** -- the class diagram says nothing about its internal implementations. Instance variables are referred to with the prefix this. All of the object's variables are visible and available from within the method.
 
@@ -275,4 +275,211 @@ The method is written inside the Person class just as the printPerson method was
 
 The class diagram also gets an update.
 
-![Class Diagram With Constructror](https://github.com/centria/basic-coding/raw/master/assets/images/persongrow.jpg)
+![Class Diagram With Growth](https://github.com/centria/basic-coding/raw/master/assets/images/persongrow.jpg)
+
+Let's call the method and see what happens:
+
+```cs
+static void Main(string[] args)
+{
+  Person ada = new Person("Ada");
+  Person antti = new Person("Antti");
+  Person martin = new Person("Martin");
+
+  ada.PrintPerson();
+  antti.PrintPerson();
+  martin.PrintPerson();
+
+  Console.WriteLine();
+
+  ada.GrowOlder();
+  antti.GrowOlder();
+  antti.GrowOlder();
+
+  ada.PrintPerson();
+  antti.PrintPerson();
+  martin.PrintPerson();
+}
+```
+
+Prints
+
+```console
+Ada, age 0 years
+Antti, age 0 years
+Martin, age 0 years
+
+Ada, age 1 years
+Antti, age 2 years
+Martin, age 0 years
+```
+
+That is to say that when the two objects are "born" they're both zero-years old (**this.age = 0**; is executed in the constructor). The **ada** object's GrowOlder method is called once, and **antti** object's GrowOlder is called twice.. As the print output demonstrates, the age of Ada is 1 years after growing older, for Antti it is 2. Calling the method on an object corresponding to Ada or Antti has no impact on the age of the other person object since each object instantiated form a class has its own instance variables, as can be seen from Martin.
+
+The method can also contain conditional statements and loops. The GrowOlder method below limits aging to 100 years.
+
+```cs
+public class Person
+{
+  private string name;
+  private int age;
+
+  public Person(string initialName)
+  {
+    this.age = 0;
+    this.name = initialName;
+  }
+
+  public void PrintPerson()
+  {
+    Console.WriteLine(this.name + ", age " + this.age + " years");
+  }
+
+  public void GrowOlder()
+  {
+    if (this.age < 100)
+    {
+      this.age = this.age + 1;
+    }
+  }
+}
+```
+
+## Returning a Value From a Method
+
+A method can return a value. The methods we've created in our objects haven't so far returned anything. This has been marked by typing the keyword **void** in the method definition.
+
+```cs
+public class Door 
+{
+  public void Knock() 
+  {
+      // ...
+  }
+}
+```
+
+The keyword **void** means that the method does not return a value.
+
+If we want the method to return a value, we need to replace the void keyword with the type of the variable to be returned. In the following example, the Teacher class has a method **Grade** that always returns an integer-type (**int**) variable (in this case, the value 10). The value is always returned with the **return** command:
+
+```cs
+public class Teacher 
+{
+  public int Grade() 
+  {
+      return 10;
+  }
+}
+```
+
+The method above returns an **int** type variable of value 10 when called. For the return value to be used, it needs to be assigned to a variable. This happens the same way as regular value assignment, i.e., by using the equals sign:
+
+```cs
+class Program
+{
+  static void Main(string[] args)
+  {
+  Teacher teacher = new Teacher();
+
+  int grading = teacher.Grade();
+
+  Console.WriteLine("The grade received is " + grading);
+  }
+}
+```
+
+```console
+The grade received is 10
+```
+
+The method's return value is assigned to a variable of type **int** value just as any other int value would be. The return value could also be used to form part of an expression.
+
+```cs
+static void Main(string[] args)
+{
+Teacher first = new Teacher();
+Teacher second = new Teacher();
+Teacher third = new Teacher();
+
+double average = (first.Grade() + second.Grade() + third.Grade()) / 3.0;
+
+Console.WriteLine("Grading average " + average);
+}
+```
+
+```console
+Grading average 10
+```
+
+All the variables we've encountered so far can also be returned by a method. To sum:
+
+* A method that returns nothing has the **void** modifier as the type of variable to be returned.
+
+```cs
+public void MethodThatReturnsNothing() {
+  // the method body
+}
+```
+
+* A method that returns an integer variable has the **int** modifier as the type of variable to be returned.
+
+```cs
+public int MethodThatReturnsAnInteger() {
+  // the method body, requires a return statement
+}
+```
+
+* A method that returns a string has the **string** modifier as the type of the variable to be returned
+
+```cs
+public string MethodThatReturnsAString() {
+  // the method body, requires a return statement
+}
+```
+
+* A method that returns a double-precision number has the **double** modifier as the type of the variable to be returned.
+
+```cs
+public double MethodThatReturnsADouble() {
+  // the method body, requires a return statement
+}
+```
+
+
+Let's continue with the Person class and add a **ReturnAge** method that returns the person's age.
+
+```cs
+public class Person
+{
+  private string name;
+  private int age;
+
+  public Person(string initialName)
+  {
+    this.age = 0;
+    this.name = initialName;
+  }
+
+  public void PrintPerson()
+  {
+    Console.WriteLine(this.name + ", age " + this.age + " years");
+  }
+
+  public void GrowOlder()
+  {
+    if (this.age < 100)
+    {
+      this.age = this.age + 1;
+    }
+  }
+
+  // the added method
+  public int ReturnAge()
+  {
+    return this.age;
+  }
+}
+```
+
+![Class Diagram With Return](https://github.com/centria/basic-coding/raw/master/assets/images/persongrow.jpg)
