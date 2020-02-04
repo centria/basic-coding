@@ -155,3 +155,31 @@ The constructor's name is always the same as the class name. The class in the ex
 A few things to note: the constructor contains the expression **this.age = 0**. This expression sets the instance variable age of the newly created object (i.e., "this" object's age) to 0. The second expression **this.name = initialName** likewise assigns the string passed as a parameter to the instance variable name of the object created.
 
 ![Class Diagram With Constructror](https://github.com/centria/basic-coding/raw/master/assets/images/personconstructor.jpg)
+
+If the programmer does not define a constructor for a class, the C# compiler automatically creates a default one for it. A default constructor is a constructor that doesn't do anything apart from creating the object. The object's variables remain uninitialized (generally, the value of any object references will be null, meaning that they do not point to anything).
+
+For example, an object can be created from the class below by making the call **new Person()**
+
+```cs
+public class Person
+{
+  private string name;
+  private int age;
+}
+```
+
+If a constructor has been defined for a class, no default constructor exists. For the class below, calling new Person would cause an error, as the compiler cannot find a constructor in the class that has no parameters.
+
+```cs
+public class Person
+{
+  public Person(string initialName) {
+    this.age = 0;
+    this.name =  initialName;
+  }
+  private string name;
+  private int age;
+}
+```
+
+## Defining Methods For an Object
