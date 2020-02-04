@@ -139,12 +139,13 @@ This is achieved by defining the method that creates the object, i.e., its **con
 ```cs
 public class Person
 {
+  private string name;
+  private int age;
+
   public Person(string initialName) {
     this.age = 0;
     this.name =  initialName;
   }
-  private string name;
-  private int age;
 }
 ```
 
@@ -173,13 +174,43 @@ If a constructor has been defined for a class, no default constructor exists. Fo
 ```cs
 public class Person
 {
+  private string name;
+  private int age;
+
   public Person(string initialName) {
     this.age = 0;
     this.name =  initialName;
   }
-  private string name;
-  private int age;
 }
 ```
 
 ## Defining Methods For an Object
+
+We know how to create an object and initialize its variables. However, an object also needs methods to be able to do anything. As we've learned, a **method** is a named section of source code inside a class which can be invoked.
+
+```cs
+public class Person
+{
+  private string name;
+  private int age;
+
+  public Person(string initialName) {
+    this.age = 0;
+    this.name =  initialName;
+  }
+
+  public void PrintPerson() {
+    Console.WriteLine(this.name + ", age " + this.age + " years");
+  }
+}
+```
+
+A method is written inside of the class beneath the constructor. The method name is preceded by **public void**, since the method is intended to be visible to the outside world (**public**), and it does not return a value (**void**).
+
+We've used the modifier **static** in some of the methods that we've written. The static modifier indicates that the method in question does not belong to an object and thus cannot be used to access any variables that belong to objects.
+
+Going forward, our methods **will not include the static keyword** if they're used to process information about objects created form a given class. If a method receives as parameters all the variables whose values ​​it uses, it can have static modifier.
+
+In addition to the class name, instance variables, and constructor, the class diagram now also includes the method PrintPerson. Since the method comes with the **public** modifier, the method name is prefixed with a plus sign. No parameters are defined for the method, so nothing is put inside the method's parentheses. The method is also marked with information indicating that it does not return a value, here **void**.
+
+![Class Diagram With Constructror](https://github.com/centria/basic-coding/raw/master/assets/images/printperson.jpg)
