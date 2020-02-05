@@ -482,4 +482,409 @@ public class Person
 }
 ```
 
-![Class Diagram With Return](https://github.com/centria/basic-coding/raw/master/assets/images/persongrow.jpg)
+![Class Diagram With Return](https://github.com/centria/basic-coding/raw/master/assets/images/personreturn.jpg)
+
+Let's illustrate how the method works:
+
+```cs
+static void Main(string[] args)
+{
+  Person pekka = new Person("Pekka");
+  Person antti = new Person("Antti");
+
+  pekka.GrowOlder();
+  pekka.GrowOlder();
+
+  antti.GrowOlder();
+
+  Console.WriteLine("Pekka's age: " + pekka.ReturnAge());
+  Console.WriteLine("Antti's age: " + antti.ReturnAge());
+  int combined = pekka.ReturnAge() + antti.ReturnAge();
+
+  Console.WriteLine("Pekka's and Antti's combined age " + combined + " years");
+}
+```
+
+```console
+Pekka's age: 2
+Antti's age: 1
+Pekka's and Antti's combined age 3 years
+```
+
+As we came to notice, methods can contain source code in the same way as other parts of our program. Methods can have conditionals or loops, and other methods can also be called from them.
+
+Let's now write a method for the person that determines if the person is of legal age. The method returns a boolean - either **true** or **false**:
+
+```cs
+class Person
+{
+  //... The existing code could be up here
+
+  public bool IsOfLegalAge()
+  {
+    if (this.age < 18)
+    {
+      return false;
+    }
+
+    return true;
+  }
+
+  /*
+  The method could have been written more succintly in the following way:
+
+  public bool IsOfLegalAge() 
+  {
+    return this.age >= 18;
+  }
+  */
+}
+```
+
+And let's test it out:
+
+```cs
+static void Main(string[] args)
+{
+  Person pekka = new Person("Pekka");
+  Person antti = new Person("Antti");
+
+  int i = 0;
+  while (i < 27)
+  {
+    pekka.GrowOlder();
+    i = i + 1;
+  }
+
+  antti.GrowOlder();
+
+  if (antti.IsOfLegalAge())
+  {
+    Console.Write("of legal age: ");
+    antti.PrintPerson();
+  }
+  else
+  {
+    Console.Write("underage: ");
+    antti.PrintPerson();
+  }
+
+  if (pekka.IsOfLegalAge())
+  {
+    Console.Write("of legal age: ");
+    pekka.PrintPerson();
+  }
+  else
+  {
+    Console.Write("underage: ");
+    pekka.PrintPerson();
+  }
+}
+```
+
+```console
+underage: Antti, age 1 years
+of legal age: Pekka, age 27 years
+```
+
+Let's fine-tune the solution a bit more. In its current form, a person can only be "printed" in a way that includes both the name and the age. Situations exist, however, where we may only want to know the name of an object. 
+
+In many programming languages, you would write a **get method** for this. In C#, properties, such as our Person's **age** and **name**, can be used with [**Auto Implementation Property**](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/auto-implemented-properties). 
+
+```cs
+public string name { get; }
+```
+
+Let's open this up a bit. "Under the hood", the code above tells our **C# compiler** that our property **name** has kind of "built-in" methods for getting an setting the value. The code above is equal in functionality to:
+
+```cs
+string _name;
+public string name
+{
+  get
+  {
+    return _name;
+  }
+}
+```
+
+In this example, there is now also a line **string _name;**, and on both our original **string name** is now **public**. The **string _name;** is known as a [**Backing field**](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/properties#properties-with-backing-fields), you can read more about them from the link. We do not have to worry about them now.
+
+
+Rather than having a method like we did with our **age**:
+
+```cs
+public string ReturnAge() {
+  return age;
+}
+```
+
+We have a very short solution
+
+```cs
+public string name { get; }
+```
+
+NOTICE! We have to change our string **name** into **public** (from private), so it can be accessed from the **Main program**, or any other class. There are ways of protecting the property, but we'll get to that later.
+
+Let's use this way of getting age:
+
+```cs
+static void Main(string[] args)
+{
+  Person pekka = new Person("Pekka");
+  Person antti = new Person("Antti");
+
+  int i = 0;
+  while (i < 27)
+  {
+    pekka.GrowOlder();
+    i = i + 1;
+  }
+
+  antti.GrowOlder();
+
+  if (antti.IsOfLegalAge())
+  {
+    Console.WriteLine(antti.name + " is of legal age");
+  }
+  else
+  {
+    Console.WriteLine(antti.name + " is underage");
+  }
+
+  if (pekka.IsOfLegalAge())
+  {
+    Console.WriteLine(pekka.name + " is of legal age");
+  }
+  else
+  {
+    Console.WriteLine(pekka.name + " is underage ");
+  }
+}
+```
+
+```console
+Antti is underage
+Pekka is of legal age
+```
+
+You can see, that now we can call our **Person's** name with simply adding **.name** after the object, such as **antti.name**. Let's update our **age** to have a **get method** as well, and remove the old ReturnAge-method. Now our class looks like this:
+
+
+```cs
+public class Person
+{
+  public string name { get; }
+  public int age { get; set; }
+
+  public Person(string initialName)
+  {
+    this.age = 0;
+    this.name = initialName;
+  }
+
+  public void PrintPerson()
+  {
+    Console.WriteLine(this.name + ", age " + this.age + " years");
+  }
+
+  public void GrowOlder()
+  {
+    if (this.age < 100)
+    {
+      this.age = this.age + 1;
+    }
+  }
+
+  public bool IsOfLegalAge() 
+  {
+    return this.age >= 18;
+  }
+}
+```
+
+You can see that **age** has also a method for **set**. This is because we are changing the age of **Person** in our method **GrowOlder**. We will get into **set method** later.
+
+## A string representation of an object and the ToString-method
+
+We are guilty of programming in a somewhat poor style by creating a method for printing the object, i.e., the **PrintPerson** method. A preferred way is to define a method for the object that returns a "string representation" of the object. The method returning the string representation is always **ToString** in C#. Let's define this method for the person in the following example:
+
+```cs
+public class Person
+{
+  // ..
+  public override string ToString() 
+  {
+      return this.name + ", age " + this.age + " years";
+  }
+}
+```
+
+The **ToString** functions as **PrintPerson** does. However, it doesn't itself print anything but instead **returns** a string representation, which the calling method can execute for printing as needed.
+
+The method is used in a somewhat surprising way:
+
+```cs
+static void Main(string[] args)
+{
+  Person pekka = new Person("Pekka");
+  Person antti = new Person("Antti");
+
+  int i = 0;
+  while (i < 27)
+  {
+    pekka.GrowOlder();
+    i = i + 1;
+  }
+
+  antti.GrowOlder();
+
+  Console.WriteLine(pekka); // Same as Console.WriteLine(pekka.ToString() )
+  Console.WriteLine(antti); // Same as Console.WriteLine(antti.ToString() )
+}
+```
+
+In principle, the **Console.WriteLine** method requests the object's string representation and prints it. The call to the **ToString** method returning the string representation does not have to be written explicitly, as C# adds it automatically. When a programmer writes:
+
+```cs
+Console.WriteLine(antti);
+```
+
+C# extends the call at run time to the following form:
+
+```cs
+Console.WriteLine(antti.ToString());
+```
+
+As such, the call **Console.WriteLine(antti)** calls the **ToString** method of the **antti object** and prints the string returned by it.
+
+We can remove the now obsolete printPerson method from the Person class.
+
+## Method parameters
+
+Let's continue with the **Person** class once more. We've decided that we want to calculate people's body mass indexes. To do this, we write methods for the person to set both the height and the weight, and also a method to calculate the body mass index. The new and changed parts of the Person object are as follows:
+
+```cs
+public class Person
+{
+  public string name { get; }
+  public int age { get; set; }
+  public int weight { get; set; }
+  public int height { get; set; }
+
+  public Person(string initialName)
+  {
+    this.age = 0;
+    this.weight = 0;
+    this.height = 0;
+    this.name = initialName;
+  }
+
+  public double BodyMassIndex()
+  {
+    double heigthPerHundred = this.height / 100.0;
+    return this.weight / (heigthPerHundred * heigthPerHundred);
+  }
+
+  // ...
+}
+```
+The instance variables **height** and **weight** were added to the person. We can now see the **{ get; set; };** on both of these new variables. We will use them next to be able to tell our program, how tall or heavy a person is.
+
+```cs
+static void Main(string[] args)
+{
+  Person matti = new Person("Matti");
+  Person juhana = new Person("Juhana");
+
+  matti.height = 180;
+  matti.weight = 86;
+
+  juhana.height = 175;
+  juhana.weight = 64;
+
+  Console.WriteLine(matti.name + ", body mass index is " + matti.BodyMassIndex());
+  Console.WriteLine(juhana.name + ", body mass index is " + juhana.BodyMassIndex());
+
+}
+```
+
+This prints us 
+
+```console
+Matti, body mass index is 26.54320987654321
+Juhana, body mass index is 20.897959183673468
+```
+
+## A parameter and instance variable having the same name!
+
+In our constructor, we use the variable **initialName** rather than just **name**.
+
+```cs
+public Person(string initialName)
+{
+  this.age = 0;
+  this.weight = 0;
+  this.height = 0;
+  this.name = initialName;
+}
+```
+
+The parameter's name could also be the same as the instance variable's, so the following would also work:
+
+```cs
+public Person(string name)
+{
+  this.age = 0;
+  this.weight = 0;
+  this.height = 0;
+  this.name = name;
+}
+```
+
+In this case, **name** in the method refers specifically to a parameter named **name** and this.name to an instance variable of the same name. For example, the following example would not work as the code does not refer to the instance variable **name** at all. What the code does in effect is set the **name** variable received as a parameter to the value it already contains:
+
+```cs
+public Person(string name)
+{
+  this.age = 0;
+  this.weight = 0;
+  this.height = 0;
+  // DO NOT DO THIS!
+  name = name;
+}
+```
+
+```cs
+public Person(string name)
+{
+  this.age = 0;
+  this.weight = 0;
+  this.height = 0;
+  // DO THIS INSTEAD!
+  this.name = name;
+}
+```
+
+## Calling an internal method
+
+The object may also call its methods. For example, if we wanted the string representation returned by ToString to also tell of a person's body mass index, the object's own BodyMassIndex method should be called in the ToString method:
+
+```cs
+public override string ToString()
+{
+      return this.name + ", age " + this.age + " years, my body mass index is " + this.BodyMassIndex();
+}
+```
+
+So, when an object calls an internal method, the **name of the method** and **this** prefix suffice. An alternative way is to call the object's own method in the form BodyMassIndex(), whereby no emphasis is placed on the fact that the object's own bodyMassIndex method is being called:
+
+```cs
+public override string ToString()
+{
+      return this.name + ", age " + this.age + " years, my body mass index is " + BodyMassIndex();
+}
+```
+
+**You can now do the exercises for object oriented programming (oop)**
