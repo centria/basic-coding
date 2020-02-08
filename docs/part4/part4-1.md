@@ -86,7 +86,11 @@ As with variables and methods, the name of a class should be as descriptive as p
 
 Make sure the file Person.cs is in the same folder as **Program.cs**
 
-3. Add this code to your file:
+3. Make sure to include the correct **namespace** so you can reference it from your Program.cs file. 
+
+We'll get to namespaces later. For now, whenever you create a new class, **use the folder name as the namespace**.
+
+4. Add this code to your file:
 
 ```cs
 using System;
