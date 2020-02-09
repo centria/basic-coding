@@ -79,6 +79,9 @@ rebecca,23
 There are several ways how to read a file. Here's (first) two of them:
 
 ```cs
+
+using System.IO;
+
 static void Main(string[] args)
 {
   // Example #1
