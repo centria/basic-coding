@@ -11,3 +11,7 @@ This site is meant for Road to Software Engineering program in [**Centria Univer
 The course begins in January 2020 and lasts six weeks. During the course, the students learn the basics of programming and **C#**. You can find more about the [**learning goals and grading from here**](part0).
 
 The course material will published one week at a time, along with the exercises for the week.
+
+## Where to begin
+
+Before you do this course, it is advised to do the [**course for command line and version control first**](https://centria.github.io/console/). This gives you tools to learn how to create your own Git repository and how to use it. This is required for returning the exercises for this course.
