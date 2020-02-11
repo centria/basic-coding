@@ -42,10 +42,7 @@ public class Person
 
   public void GrowOlder()
   {
-    if (this.age < 100)
-    {
-      this.age++;
-    }
+    this.age++;
   }
 
   public override string ToString()
@@ -152,3 +149,59 @@ static void Main(string[] args)
 Paul, age: 24
 Ada, age: 0
 ```
+
+## Method overloading
+
+Like constructors, methods can also be overloaded, so you can have multiple versions of one method. Again, the parameters of the different versions must be different. Let's make another version of the **GrowOlder** method, which ages the person the amount of years given to it as a parameter.
+
+```cs
+public void GrowOlder()
+{
+  this.age++;
+}
+
+public void GrowOlder(int years)
+{
+  this.age += years;
+}
+```
+Below "Paul" is born 24 years old, first ages one year and then ages 10 years:
+
+```cs
+static void Main(string[] args)
+{
+  Person paul = new Person("Paul", 24);
+  Console.WriteLine(paul);
+  paul.GrowOlder();
+  Console.WriteLine(paul);
+  paul.GrowOlder(10);
+  Console.WriteLine(paul);
+
+}
+```
+
+```console
+Paul, age: 24
+Paul, age: 25
+Paul, age: 35
+```
+
+A Person now has two methods called **GrowOlder**. Which one is executed debends on the amount of parameters given.
+
+We can also modify the program so, that the method without parameters is implemented using the method **GrowOlder(int years)**:
+
+```cs
+public void GrowOlder()
+{
+  this.GrowOlder(1);
+}
+
+public void GrowOlder(int years)
+{
+  this.age += years;
+}
+```
+
+The calling of an overloaded method is a bit different than that of an overloaded constructor. The idea is still exactly the same. Rather than having the same code in two places, we use **this** and tell what we are calling. 
+
+NOTICE! You cannot use the same notation which we used on a constructor, nor can you use this notation on a constructor. You can try what happens (or which kind of errors you get).
