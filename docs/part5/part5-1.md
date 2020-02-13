@@ -3,7 +3,7 @@ title: "Object Oriented revision"
 parent: "Part 5 - Objects continued"
 permalink: /part5/1/
 nav_order: 1
-published: false
+published: true
 ---
 
 # Object Oriented programming revisited
