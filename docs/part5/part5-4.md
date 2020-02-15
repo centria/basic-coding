@@ -1041,3 +1041,5 @@ public class Factory
   }
 }
 ```
+
+**You can now do the exercises for objects and references**

@@ -259,3 +259,5 @@ In the course material the concrete details concerning variables and computer me
 From the point of view of the computer operation, there are a great deal more occuring during the execution of the statement int number = 5. The execution calls for reserving a 32-bit location from the memory for the value 5, and another 32-bit location for the variable number. The size of the location is determined by the variable type. After this the contents of the memory location that includes the value 5 are copied into the memory location of the variable number.
 
 In addition to the above, the variable number is not a straightforward memory location or a box. The value of the variable number is a memory address -- the information about the variable type, included in the variable, tells how much data should be retrieved from the specified address. In the case of an integer this amount is 32 bits, for instance.
+
+**There are no exercises for this part separately**
