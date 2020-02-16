@@ -743,6 +743,69 @@ public bool OlderThan(Person compared) {
 
 Now the concrete comparison of dates is implemented in the class that it logically (based on the class names) belongs to.
 
+## Equality
+
+If we want to be able to compare two objects of our own design with the **Equals** method, that method must be defined in the class. The method equals is defined as a method that returns a boolean type value -- the return value indicates whether the objects are equal.
+
+The method equals is implemented in a way that allows for using it to compare the current object with any other object. The method receives an Object type object as its single parameter -- all objects are Object type, in addition to their own type. The equals method first compares if the addresses are equal: if so, the objects are equal. After this, we examine if the types of the objects are the same: if not, the objects are not equal. Then the Object object passed as the parameter is converted to the type of the object that is being examined by using a type cast. Then the values of the object variables can be compared. Below the equality comparison has been implemented for the SimpleDate class.
+
+```cs
+namespace sandbox
+{
+  public class SimpleDate
+  {
+    private int day;
+    private int month;
+    private int year;
+
+    public SimpleDate(int day, int month, int year)
+    {
+      this.day = day;
+      this.month = month;
+      this.year = year;
+    }
+
+    public bool Equals(SimpleDate compared)
+    {
+      // if the variables are located in the same position, they are equal
+      if (this == compared)
+      {
+        return true;
+      }
+
+      // if the compared object is null, or
+      // if the type of the compared object is not SimpleDate, the objects are not equal
+      if ((compared == null) || !this.GetType().Equals(compared.GetType()))
+      {
+        return false;
+      }
+
+      // convert the Object type compared object
+      // into an SimpleDate type object called comparedSimpleDate
+      SimpleDate comparedSimpleDate = (SimpleDate)compared;
+
+      // if the values of the object variables are the same, the objects are equal
+      if (this.day == comparedSimpleDate.day &&
+          this.month == comparedSimpleDate.month &&
+          this.year == comparedSimpleDate.year)
+      {
+        return true;
+      }
+
+      // otherwise the objects are not equal
+      return false;
+    }
+
+
+    public override string ToString()
+    {
+      return this.day + "." + this.month + "." + this.year;
+    }
+  }
+}
+```
+
+
 ## Some inheritance
 
 Every class we create (and every ready-made C# class) inherits the class Object, even though it is not specially visible in the program code. This is why an instance of any class can be passed as a parameter to a method that receives an Object type variable as its parameter. Inheriting the Object can be seen elsewhere, too: for instance, the **ToString** method exists even if you have not implemented it yourself, just as the equals method does.
