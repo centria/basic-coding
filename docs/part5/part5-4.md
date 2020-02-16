@@ -805,7 +805,7 @@ namespace sandbox
 }
 ```
 
-Notice! So far we have compared only with **==**, but now we're also using Equals. They compare different things. Try out, what happens if you compare two identical SimpleDates with both:
+Notice! So far we have compared only with **==**, but now we're also using **Equals**. They compare different things. Try out, what happens if you compare two identical SimpleDates with both:
 
 ```cs
 static void Main(string[] args)
