@@ -805,6 +805,18 @@ namespace sandbox
 }
 ```
 
+Notice! So far we have compared only with **==**, but now we're also using Equals. They compare different things. Try out, what happens if you compare two identical SimpleDates with both:
+
+```cs
+static void Main(string[] args)
+{
+  SimpleDate date1 = new SimpleDate(1,2,2020);
+  SimpleDate date2 = new SimpleDate(1,2,2020);
+  Console.WriteLine(date1.Equals(date2));
+  Console.WriteLine(date1 == date2);
+}
+```
+
 
 ## Some inheritance
 
