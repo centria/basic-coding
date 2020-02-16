@@ -765,7 +765,7 @@ namespace sandbox
       this.year = year;
     }
 
-    public bool Equals(SimpleDate compared)
+    public override bool Equals(object compared)
     {
       // if the variables are located in the same position, they are equal
       if (this == compared)
@@ -939,7 +939,7 @@ The **Contains** method of a list uses the **Equals** method that is defined for
 Let's implement the **Equals** method for the class **Bird**. The method examines if the names of the objects are equal -- if the names match, the birds are thought to be equal.
 
 ```cs
-public override bool Equals(Object compared)
+public override bool Equals(object compared)
 {
   // if the variables are located in the same position, they are equal
   if (this == compared)
