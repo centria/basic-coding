@@ -766,8 +766,8 @@ register.AddGradeBasedOnPoints(51);
 register.AddGradeBasedOnPoints(50);
 register.AddGradeBasedOnPoints(49);
 
-Consolw.WriteLine("Number of students with grade 0 (should be 1): " + register.NumberOfGrades(0);
-Consolw.WriteLine("Number of students with grade 0 (should be 2): " + register.NumberOfGrades(2);
+Console.WriteLine("Number of students with grade 0 (should be 1): " + register.NumberOfGrades(0);
+Console.WriteLine("Number of students with grade 0 (should be 2): " + register.NumberOfGrades(2);
 ```
 
 ## User interface
