@@ -682,23 +682,23 @@ public class GradeRegister
   public static int PointsToGrades(int points) 
   {
     int grade = 0;
-    if (score < 50) 
+    if (points < 50) 
     {
       grade = 0;
     } 
-    else if (score < 60) 
+    else if (points < 60) 
     {
       grade = 1;
     } 
-    else if (score < 70) 
+    else if (points < 70) 
     {
       grade = 2;
     } 
-    else if (score < 80) 
+    else if (points < 80) 
     {
       grade = 3;
     } 
-    else if (score < 90) 
+    else if (points < 90) 
     {
       grade = 4;
     } 
@@ -706,7 +706,7 @@ public class GradeRegister
     {
       grade = 5;
     }
-    grades.Add(grade);
+    return grade;
     }
   }
 }
