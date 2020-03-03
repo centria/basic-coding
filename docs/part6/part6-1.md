@@ -484,11 +484,11 @@ public int Palindromes()
 
 public bool IsPalindrome(string word) 
 {
-  int length = myString.Length;
+  int length = word.Length;
   int end = word.Length - 1;
   for (int i = 0; i < length / 2; i++)
   {
-      if (myString[i] != myString[end - i])
+      if (word[i] != word[end - i])
           return false;
   }
   return true;
