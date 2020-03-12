@@ -6,3 +6,5 @@ published: true
 ---
 
 # The Exam
+
+Here will be the information about exam.
