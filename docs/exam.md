@@ -1,8 +1,8 @@
 ---
 title: "Exam information"
-permalink: /part6/
+permalink: /exam/
 nav_order: 9
 published: true
 ---
 
-# The exam
+# The Exam
