@@ -1,7 +1,7 @@
 ---
 title: "Part 7 - Projects"
 permalink: /part7/
-nav_order: 8
+nav_order: 9
 published: true
 has_children: true
 has_toc: true

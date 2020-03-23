@@ -1,7 +1,7 @@
 ---
 title: "Part 8 - Dictionaries"
 permalink: /part8/
-nav_order: 9
+nav_order: 10
 published: true
 has_children: true
 has_toc: true
