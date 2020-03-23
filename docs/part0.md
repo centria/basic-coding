@@ -20,9 +20,9 @@ The list below does not include everything, but exists to give a guideline for s
 
 | Part     |      Goal   |  
 |:--------:|:------------|
-| 7| You can use **dictionaries** as data storage, understand **hash** and solve problems with them in object oriented programming. |
-| 8| You understand inheritance and interfaces. You will learn to create classes that inherit another classes, and also classes that implement one or more interfaces. |
-| 9| TBD |
+| 7| You can create a project with proper structure and are able to run tests in the correct folder. |
+| 8| You can use **dictionaries** as data storage, understand **hash** and solve problems with them in object oriented programming. |
+| 9| You understand inheritance and interfaces. You will learn to create classes that inherit another classes, and also classes that implement one or more interfaces. |
 | 10| TBD |
 | 11| TBD |
 | 12| TBD |
