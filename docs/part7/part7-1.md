@@ -248,3 +248,78 @@ Total tests: 2
  Total time: 1.0976 Seconds
 ```
 
+Now we have created a well organized project. We are able to run our tests and the project itself. You might have noticed, that we ran the commands **dotnet run** and **dotnet test** in different folders. That's because when we run the commands, we actually check the **.csproj** file what we are running. 
+
+The commands cannot now be run from the same folder as such, but require some parameters. For example, if we are at the **NewTypesTest** folder, we can run **dotnet test**, plain and simple, as the file **NewTypesTest.csproj** is in that folder. 
+
+```console
+/NewTypes
+|__/src
+   |__/NewTypes
+      |__/Pets
+         |__Dog.cs
+         |__Cat.cs
+      |__Program.cs
+      |__NewTypes.csproj
+|__/test
+   |__NewTypesTests <-- WE ARE HERE
+      |__PetTests.cs
+      |__NewTypesTests.csproj
+```
+
+To run **dotnet run** from the same folder, we have to tell where the **NewTypes.csproj** is located. To do this, we also have to give the option **-p**, as in project, for the command:
+
+```console
+dotnet test
+dotnet run -p ../../src/NewTypes/NewTypes.csproj
+```
+
+On the other hand, we could be in the **NewTypes** folder and be able to run the **dotnet run** as such.
+
+```console
+/NewTypes
+|__/src
+   |__/NewTypes <-- WE ARE HERE
+      |__/Pets
+         |__Dog.cs
+         |__Cat.cs
+      |__Program.cs
+      |__NewTypes.csproj
+|__/test
+   |__NewTypesTests
+      |__PetTests.cs
+      |__NewTypesTests.csproj
+```
+
+ The dotnet test requires some information.  We do not have the option of project now, just the path to project file:
+
+```console
+dotnet run
+dotnet test ../../test/NewTypesTest/NewTypesTest.csproj
+```
+
+This works in any folder of the project, as long as you remember to give the options correcty:
+
+```console
+/NewTypes <-- WE ARE HERE NOW
+|__/src
+   |__/NewTypes
+      |__/Pets
+         |__Dog.cs
+         |__Cat.cs
+      |__Program.cs
+      |__NewTypes.csproj
+|__/test
+   |__NewTypesTests
+      |__PetTests.cs
+      |__NewTypesTests.csproj
+```
+
+
+```console
+dotnet run -p src/NewTypes/NewTypes.csproj
+dotnet test test/NewTypesTest/NewTypesTest.csproj
+```
+
+
+**NOTICE!** The exercises will be in this structure from part 7 onwards!
