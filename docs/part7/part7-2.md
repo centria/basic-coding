@@ -72,7 +72,6 @@ namespace sandbox
                       "five\n" + "one\n" +
                       "six\n";
       StringReader reader = new StringReader(input);
-      Console.WriteLine(input);
 
       List<string> read = new List<string>();
 
