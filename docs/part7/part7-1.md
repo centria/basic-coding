@@ -121,9 +121,19 @@ The test project cannot currently test the types in NewTypes and requires a proj
 dotnet add reference ../../src/NewTypes/NewTypes.csproj
 ```
 
-Now our **NewTypesTest.csproj** should look like this:
+If you get an error, or if you just want to do it manually, you can also add this to the **NewTypesTest.csproj** yourself:
 
-```cs
+```xml
+<ItemGroup>
+  <ProjectReference Include="../../src/NewTypes/NewTypes.csproj" />
+</ItemGroup>
+```
+
+NOTICE! On some devices, the slashes between folders need to be **\\** rather than **/**. If you get an error after adding the Project Reference, try the other version of slash (just like below); 
+
+Now our **NewTypesTest.csproj** should look something like this:
+
+```xml
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
