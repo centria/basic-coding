@@ -74,7 +74,7 @@ namespace sandbox
 }
 ```
 
-The next part follows [**this material**](https://docs.microsoft.com/en-us/dotnet/core/tutorials/with-visual-studio-code#add-a-class) for creating new classes in Visual Studio Code. You can, of course, use any editor you wish. This course material is intended for Visual Studio Code.
+The next part is meant for creating new classes in Visual Studio Code. You can, of course, use any editor you wish. This course material is intended for Visual Studio Code.
 
 ### Creating a new class
 

@@ -19,6 +19,8 @@ So far we have let ourselves off easy: all our project files have been in a sing
 
  This is not a very reasonable way to create or maintain projects. When the projects start to grow, the structure is soon hard to follow, and even harder to maintain. The following is adapted [**from this .NET Documentation**](https://docs.microsoft.com/en-us/dotnet/core/tutorials/testing-with-cli).
 
+[//]: # (Should not derive from there, as it might be copyrighted.)
+
 
 ## Organizing and testing using the NewTypes Pets Sample
 
