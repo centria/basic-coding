@@ -11,6 +11,6 @@ This material has been created by Heikki Ahonen and the material is licensed wit
 
 The course structure is based on a material made [**Agile Education Research Group**](https://www.helsinki.fi/en/researchgroups/data-driven-education) from the University of Helsinki. More information and its license can be found [**here**](https://ohjelmointi-19.mooc.fi/credits).
 
-Parts of the material are adapted from [**Microsoft .NET Core documentation**](https://docs.microsoft.com/en-us/dotnet/core/).
+Parts of the material are adapted from [**Microsoft .NET Core documentation**](https://docs.microsoft.com/en-us/dotnet/core/) which are used under their [**Terms of use**](https://docs.microsoft.com/en-us/legal/termsofuse).
 
 This site uses [**Just the Docs**](https://github.com/pmarsceill/just-the-docs), a documentation theme for Jekyll.
