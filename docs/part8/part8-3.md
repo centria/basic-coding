@@ -105,3 +105,75 @@ phoneNumbers.Add("Pekka", new List<string>());
 ```
 
 We can implement, for instance, an exercise point tracking program in a similar way. The example below outlines the **TaskTracker** class, which involves user-specific tracking of points from tasks. The user is represented as a string and the points as integers.
+
+```cs
+using System;
+using System.Collections.Generic;
+
+namespace sandbox
+{
+  public class TaskTracker
+  {
+    private Dictionary<string, List<int>> completedExercises;
+
+    public TaskTracker()
+    {
+      this.completedExercises = new Dictionary<string, List<int>>();
+    }
+
+    public void Add(string user, int exercise)
+    {
+      // an empty list has to be added for a new user if one has not already been added
+      if (!this.completedExercises.ContainsKey(user)) {
+        this.completedExercises.Add(user, new List<int>());
+      }
+
+      // let's first retrieve the list containing the exercises completed by the user and add to it
+      List<int> completed = this.completedExercises[user];
+      completed.Add(exercise);
+
+      // the previous would also work without the helper variable as follows
+      // this.completedExercises[user].Add[exercise];
+    }
+
+    public void Print()
+    {
+      Dictionary<string, List<int>>.KeyCollection keys = this.completedExercises.Keys;
+
+      foreach (string name in keys)
+      {
+        foreach (int completed in this.completedExercises[name]) {
+          Console.WriteLine(name + ": " + completed);
+        }
+      }
+    }
+  }
+}
+```
+
+```cs
+TaskTracker tracker = new TaskTracker();
+tracker.Add("Ada", 3);
+tracker.Add("Ada", 4);
+tracker.Add("Ada", 2);
+tracker.Add("Ada", 1);
+
+tracker.Add("Pekka", 4);
+tracker.Add("Pekka", 3);
+
+tracker.Add("Matti", 1);
+tracker.Add("Matti", 2);
+
+tracker.Print();
+```
+
+```console
+Ada: 3
+Ada: 4
+Ada: 2
+Ada: 1
+Pekka: 4
+Pekka: 3
+Matti: 1
+Matti: 2
+```
