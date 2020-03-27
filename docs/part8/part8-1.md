@@ -282,10 +282,10 @@ Console.WriteLine("Time elapsed: " + (end.Ticks - start.Ticks)/10000.0 + " milli
 ```console
 Name: Sense and Sensibility (1811)
 Content: ...
-Time elapsed: 27.753 milliseconds
+Time elapsed: 390.5467 millisecond
 ```
 
-With 10 million books, it takes almost a second to find two books. Of course, the way in which the list is ordered has an effect. If the book being searched was first on the list, the program would be faster. On the other hand, if the book were not on the list, the program would have to go through all of the books in the list before determining that such book does not exist.
+With 10 million (and 2) books, it takes almost half a second to find two books. Of course, the way in which the list is ordered has an effect. If the book being searched was first on the list, the program would be faster. On the other hand, if the book were not on the list, the program would have to go through all of the books in the list before determining that such book does not exist.
 
 Let's consider the same program using a dictionary.
 
@@ -320,3 +320,14 @@ if (directory.ContainsKey("Pride and Prejudice"))
 DateTime end = DateTime.Now;
 Console.WriteLine("Time elapsed: " + (end.Ticks - start.Ticks)/10000.0 + " milliseconds");
 ```
+
+
+```console
+Book not found!
+
+Name: Pride and Prejudice (1813)
+Content: ....
+Time elapsed: 5.8134 milliseconds
+```
+
+As we can see, the dictionary is quite much faster, and that's with only 2 books. What if we needed to search for 3? Or 100?
