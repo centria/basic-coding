@@ -1,7 +1,7 @@
 ---
 title: "Grouping Data Using Dictionaries"
 parent: "Part 8 - Dictionaries"
-permalink: /part8/1/
+permalink: /part8/3/
 nav_order: 3
 published: true
 ---
