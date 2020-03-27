@@ -42,3 +42,16 @@ Tampere
 
 The internal state of the hash map created above looks like this. Each key refers to some value.
 
+![Dictionary](https://github.com/centria/basic-coding/raw/master/assets/images/part8-1.dict.png)
+
+If the dictionary does not contain the key used for search, we get a **KeyNotFoundException**.
+
+```cs
+Console.WriteLine(postalCodes["67100"]);
+```
+
+```console
+Unhandled exception. System.Collections.Generic.KeyNotFoundException: The given key '67100' was not present in the dictionary.
+   at System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   at sandbox.Program.Main(String[] args) in /mnt/c/Users/HeikkiHei/Documents/coding-exercises/sandbox/Program.cs:line 17
+```
