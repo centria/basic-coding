@@ -98,7 +98,7 @@ Since we're able to define the type of a method's parameter, we can declare meth
 
 ## Implementing multiple abstract classes and interfaces
 
-As stated earlier, a class can only inherit a single class directly, but can inherit an interface as well. How do we do that in code?
+As stated earlier, a class can only inherit a single class directly, but can inherit an interface, or actually multiple interfaces, as well. How do we do that in code?
 
 The answer is simple, we just list them separated with a comma. For example a class from our exercises:
 
