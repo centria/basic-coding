@@ -95,3 +95,20 @@ IConvertible convertibleString = "string";
 ```
 
 Since we're able to define the type of a method's parameter, we can declare methods that receive an object that *implements a specific interface*. When a method's parameter is an interface, any object that implements that interface can be passed to it as an argument.
+
+## Implementing multiple abstract classes and interfaces
+
+As stated earlier, a class can only inherit a single class directly, but can inherit an interface as well. How do we do that in code?
+
+The answer is simple, we just list them separated with a comma. For example a class from our exercises:
+
+```cs
+public class Cat : Animal, INoiseCapable
+{
+  // All the code a Cat needs
+}
+```
+
+Now we have a class **Cat**, which implements the **abstract class** called **Animal**. At the same time, we also use the **interface** called **INoiseCapable**. 
+
+Now you might also notice, why the capital "I" is very convenient in front of the interfaces: With it we can directly distinguish the difference between the two, and don't have to see their code to know, which is which.
