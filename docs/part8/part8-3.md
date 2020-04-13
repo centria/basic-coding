@@ -18,7 +18,7 @@ static void Main(string[] args)
   phoneNumbers["Pekka"] = "040-12348765";
   Console.WriteLine("Pekka's number " + phoneNumbers["Pekka"]);
 
-  .A
+  phoneNumbers["Pekka"] = "09-111333";
   Console.WriteLine("Pekka's number " + phoneNumbers["Pekka"]);
 }
 ```
@@ -28,7 +28,7 @@ Pekka's number 040-12348765
 Pekka's number 09-111333
 ```
 
-NOTICE! The way we handled the dictionary is now a bit different. Rather than using the **Add** method, we put the values in by directly addressing the key, this time "Pekka". This way we could also update the value to which the key points to. This works when we assign a value to the key, even though the key does exist yet in the dictionary.
+NOTICE! The way we handled the dictionary is now a bit different. Rather than using the **Add** method, we put the values in by directly addressing the key, this time "Pekka". This way we could also update the value to which the key points to. This works when we assign a value to the key, even though the key does not yet exist in the dictionary.
 
 If we were to search for a value with a key that does not exist, however, we get an error:
 
