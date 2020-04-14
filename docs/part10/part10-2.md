@@ -269,7 +269,7 @@ else
 Correct form.
 ```
 
-* The quantifier {a} repeats a times, for example:
+* The quantifier **{a}** repeats a times, for example:
 
 ```cs
 Regex regex = new Regex("^trolo(lo){3}$");
@@ -289,7 +289,7 @@ else
 Correct form.
 ```
 
-* The quantifier {a,b} repeats a ... b times, for example:
+* The quantifier **{a,b}** repeats a ... b times, for example:
 
 
 ```cs
@@ -310,7 +310,7 @@ else
 Incorrect form.
 ```
 
-* The quantifier {a,} repeats a ... times, for example:
+* The quantifier **{a,}** repeats a ... times, for example:
 
 ```cs
 Regex regex = new Regex("^trolo(lo){3,}$");
