@@ -249,7 +249,7 @@ else
 Correct form.
 ```
 
-* The quantifier **\?** repeats 0 or 1 times, for example;
+* The quantifier **?** repeats 0 or 1 times, for example;
 
 ```cs
 Regex regex = new Regex("^trolo(lo)+$");
@@ -330,7 +330,9 @@ else
 Correct form.
 ```
 
-You can use more than one quantifier in a single regular expression. For example, the regular expression ^5{3}(1|0)*5{3}$ defines strings that begin and end with three fives. An unlimited number of ones and zeros are allowed in between.
+
+You can use more than one quantifier in a single regular expression. For example, the regular expression ^5{3}(1\|0)*5{3}$ defines strings that begin and end with three fives. An unlimited number of ones and zeros are allowed in between.
+
 
 ```cs
 Regex regex = new Regex("^5{3}(1|0)*5{3}$");
