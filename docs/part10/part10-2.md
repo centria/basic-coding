@@ -160,7 +160,7 @@ You might notice the regular expression starting with a circumflex and ending in
 
 ### Alternation (Vertical Line)
 
-A vertical line indicates that parts of a regular expressions are optional. For example, **00|111|0000** defines the strings 00,111 and 0000. The respond method returns true if the string matches any one of the specified group of alternatives.
+A vertical line indicates that parts of a regular expressions are optional. For example, **00\|111\|0000** defines the strings 00,111 and 0000. The respond method returns true if the string matches any one of the specified group of alternatives.
 
 ```cs
 Regex regex = new Regex("00|111|0000");
@@ -180,7 +180,7 @@ else
 The string contained one of the three alternatives
 ```
 
-The regular expression 00|111|0000 is actually searching for a substring from a string. This would work as well:
+The regular expression 00\|111\|0000 is actually searching for a substring from a string. This would work as well:
 
 ```cs
 Regex regex = new Regex("00|111|0000");
@@ -200,7 +200,7 @@ Since "1111" contains a substring of "111", the **regex.IsMatch** returns true.
 
 ### Affecting Part of a String (Parentheses)
 
-You can use parentheses to determine which part of a regular expression is affected by the rules inside the parentheses. Say we want to allow the strings 00000 and 00001. We can do that by placing a vertical bar in between them this way 00000|00001. Parentheses allow us to limit the option to a specific part of the string. The expression 0000(0|1) specifies the strings 00000 and 00001.
+You can use parentheses to determine which part of a regular expression is affected by the rules inside the parentheses. Say we want to allow the strings 00000 and 00001. We can do that by placing a vertical bar in between them this way 00000\|00001. Parentheses allow us to limit the option to a specific part of the string. The expression 0000(0\|1) specifies the strings 00000 and 00001.
 
 Similarly, the regular expression car(s) defines the singular (car) and plural (cars) forms of the word car. However, as we are searching for substrings with **IsMatch**, also "carssssss" would return true.
 
