@@ -23,7 +23,7 @@ The list below does not include everything, but exists to give a guideline for s
 | 7| You can create a project with proper structure and are able to run tests in the correct folder. |
 | 8| You can use **dictionaries** as data storage, understand **hash** and solve problems with them in object oriented programming. |
 | 9| You understand inheritance and interfaces. You will learn to create classes that inherit another classes, and also classes that implement one or more interfaces. |
-| 10| TBD |
+| 10| You understand how objects are compared and can use this information. You understand the basics of enumeration and regular expressions. |
 | 11| TBD |
 | 12| TBD |
 
