@@ -148,7 +148,6 @@ public class Person : IIdentifiable, IComparable<Person> {
         this.socialSecurityNumber = socialSecurityNumber;
     }
 
-    
     public override string getId() {
         return this.socialSecurityNumber;
     }
@@ -158,3 +157,54 @@ public class Person : IIdentifiable, IComparable<Person> {
     }
 }
 ```
+
+Let us examine a situation, where we had bit of an erronous way of comparing items, i.e. by their name:
+
+```cs
+public class Person : IIdentifiable, IComparable<Person> {
+    public string name { get; }
+    public string socialSecurityNumber { get; }
+
+    public Person(string name, string socialSecurityNumber) {
+        this.name = name;
+        this.socialSecurityNumber = socialSecurityNumber;
+    }
+
+    public override string getId() {
+        return this.socialSecurityNumber;
+    }
+
+    public int CompareTo(Person another) {
+        return this.name.CompareTo(another.name)
+    }
+}
+```
+
+This is not of course reasonable, as there are people with the same name. The logic is still quite repairable, as we could have a secondary comparison. If we want to stick as the name being the first sorting point and the socialSecurityNumber as secondary, we could do the following:
+
+
+```cs
+public class Person : IIdentifiable, IComparable<Person> {
+    public string name { get; }
+    public string socialSecurityNumber { get; }
+
+    public Person(string name, string socialSecurityNumber) {
+        this.name = name;
+        this.socialSecurityNumber = socialSecurityNumber;
+    }
+
+    public override string getId() {
+        return this.socialSecurityNumber;
+    }
+
+    public int CompareTo(Person another) {
+      if (this.name == another.name)
+      {
+        return this.getId().CompareTo(another.getId());
+      }
+      return this.name.CompareTo(another.name);
+    }
+}
+```
+
+This way we can first check for the name equality and sort by name first, only after that by our socialSecurityNumber (in Finland that's also the birthday).
