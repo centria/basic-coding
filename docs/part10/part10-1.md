@@ -125,3 +125,36 @@ mikael (182)
 ada (184)
 matti (187)
 ```
+
+A class can implement multiple interfaces. Multiple interfaces are implemented by separating the implemented interfaces with commas (public class ... : *IFirstInterface*, *ISecondInterface* ...). Implementing multiple interfaces requires us to implement all the of the methods whose implementations are required by the interfaces.
+
+Say we have the following **IIdentifiable** interface.
+
+```cs
+public interface IIdentifiable {
+    string getId();
+}
+```
+
+We want to create a Person who is both identifiable and sortable. This can be achieved by implementing both of the interfaces. An example is provided below.
+
+```cs
+public class Person : IIdentifiable, IComparable<Person> {
+    public string name { get; }
+    public string socialSecurityNumber { get; }
+
+    public Person(string name, string socialSecurityNumber) {
+        this.name = name;
+        this.socialSecurityNumber = socialSecurityNumber;
+    }
+
+    
+    public override string getId() {
+        return this.socialSecurityNumber;
+    }
+
+    public int CompareTo(Person another) {
+        return this.getId().CompareTo(another.getId());
+    }
+}
+```
