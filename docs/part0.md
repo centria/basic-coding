@@ -24,8 +24,8 @@ The list below does not include everything, but exists to give a guideline for s
 | 8| You can use **dictionaries** as data storage, understand **hash** and solve problems with them in object oriented programming. |
 | 9| You understand inheritance and interfaces. You will learn to create classes that inherit another classes, and also classes that implement one or more interfaces. |
 | 10| You understand how objects are compared and can use this information. You understand the basics of enumeration and regular expressions. |
-| 11| TBD |
-| 12| TBD |
+| 11| You can create random strings and numbers. You are able to handle exceptions, read and write (to and from) files, and use these in problem solving. |
+| 12| You can create small graphical interfaces for your programs. |
 
 
 
