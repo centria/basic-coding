@@ -160,7 +160,7 @@ Random numbers used by computer programs are typically pseudorandom. They seem l
 All randomness in computer programs is not pseudorandom. Programs aiming for stronger randomness use, among other things, real life random phenomena to generate random numbers. For example space radiation or [**lava lamps**](https://www.wired.com/2003/08/random/) are thought to be random phenomena.
 
 
-You can read more about randomness from https://www.random.org/randomness/.
+You can read more about randomness from [**https://www.random.org/randomness/**](https://www.random.org/randomness/).
 
 
 
