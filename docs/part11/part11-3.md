@@ -74,3 +74,45 @@ storer.WriteToFile("diary.txt", "Dear diary, today was a good day.");
 ```
 
 By calling the method above we create a file called "diary.txt" and write the text "Dear diary, today was a good day." into it. If the file already exists, the earlier contents are erased when we store the new text.
+
+### Appending information to a file
+
+In our **Storer** class above, we call the basic constructor for **StreamWriter** with **new StreamWriter(fileName)**. By doing this everytime we call the method **WriteToFile**, we open the file, write into it, and close the file. We end up overwriting our file content each and every time.
+
+Of course, having our file open all the time would be one option, but quite unreasonable. If we want to append information to the file, we can also use an [**overloaded constructor**](https://docs.microsoft.com/en-us/dotnet/api/system.io.streamwriter.-ctor?view=netframework-4.8#overloads) for the StreamWriter.
+
+This time we are using [**StreamWriter(String, Boolean)**](https://docs.microsoft.com/en-us/dotnet/api/system.io.streamwriter.-ctor?view=netframework-4.8#System_IO_StreamWriter__ctor_System_String_System_Boolean_), where the Boolean value determinates, if we want to append the information to a file, rather than overwrite every time. Let's update our Storer class:
+
+```cs
+namespace sandbox
+{
+  using System;
+  using System.IO;
+  public class Storer
+  {
+
+    public void WriteToFile(string fileName, string text)
+    {
+      try
+      {
+        // Notice the change in the parameters
+        StreamWriter writer = new StreamWriter(fileName, true);
+        writer.WriteLine(text);
+        writer.Close();
+      }
+      catch (Exception e)
+      {
+        Console.WriteLine(e.Message);
+      }
+    }
+  }
+}
+```
+
+With this change, we can call the method more than once, and the diary will update with all the information:
+
+```cs
+Storer storer = new Storer();
+storer.WriteToFile("diary.txt", "Dear diary, today was a good day.");
+storer.WriteToFile("diary.txt", "Dear diary, today was a bad day.");
+```
