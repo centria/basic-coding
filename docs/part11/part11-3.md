@@ -116,3 +116,58 @@ Storer storer = new Storer();
 storer.WriteToFile("diary.txt", "Dear diary, today was a good day.");
 storer.WriteToFile("diary.txt", "Dear diary, today was a bad day.");
 ```
+
+## Replacing certain parts of a file
+
+Sometimes we want to make changes to the files we have saved already. The easiest way is just to write over the data we already have in our files. But what if we only want to replace certain, already known parts of the text? Let's look at that a bit closer.
+
+```cs
+string str = File.ReadAllText("diary.txt");
+str = str.Replace("Dear diary, today was a bad day.", "Dear diary, today was an exceptional day.");
+File.WriteAllText("diary.txt", str);
+```
+
+In our example above, we are using the same "diary.txt" as earlier, and our bad day turned into an exceptional day. 
+
+We can load the whole file into a string, this time variable "str", with the familiar **ReadAllText**. 
+
+On the next line, we use the method **Replace** from String class. This method searches for the first string given as a parameter, and replaces it with the string given as the second parameter.
+
+In our example, we want to make sure we replace the whole line, but the method could be used to replace just parts of a line, as well.
+
+On the third line, we use the method **WriteAllText** from the File class, and write the information back to the file. Just like StremWriter, this also over writes the content of the file, but also closes the file on its own.
+
+
+Let's say we have a larger file, or we would want to go through our file with a loop. In the next example, we do the same task, but with StreamWriter and a for-loop.
+
+
+```cs
+public static void Main(string[] args)
+{
+  string diary = "diary.txt";
+  string[] lines = File.ReadAllLines(diary);
+  StreamWriter sw = new StreamWriter(diary);
+  for (int i = 0; i < lines.Length; i++)
+  {
+    string line = lines[i];
+    if (lines[i].Contains("an exceptional"))
+    {
+      line = "Dear diary, today was an ordinary day.";
+    }
+    sw.WriteLine(line);
+  }
+  sw.Close();
+}
+```
+
+On the first line we save the path of the file into a variable, so we don't have to write it out every time we need it. Extremely handy, especially if your file is not in the same folder as your program.
+
+On the second line we save the content of the file into a string array, with **File.ReadAllLines**. With this we get an iterable version of the file content.
+
+Next, we create a new StreamWriter, and give the file as a parameter, so it can now handle the writing and saving the file.
+
+In our loop, we go through the file line by line. If the line should now contain "an exceptional", we will change the content of the line. We then use the **WriteLine** method for the line, to save it in the StreamWriter stream.
+
+After the loop, we use the **Close()** method to save the stream into the file, and close the file.
+
+NOTICE! Both of these methods loaded the original file into the system memory, with **ReadAllLines** and **ReadAllText**. This is completely fine for small files, but with larger files, you will quickly end up filling up the memory and crashing the system.
