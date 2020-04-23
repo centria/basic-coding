@@ -7,6 +7,6 @@ has_children: true
 has_toc: true
 ---
 
-## Part 10
+## Part 11
 
 The 11th part of the course material focuses on exception handling, reading and writing files and randomization.
