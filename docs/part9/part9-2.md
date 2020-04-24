@@ -511,7 +511,7 @@ public class Packer
     while (i < 10)
     {
       IStorable newThing = factory.ProduceNew();
-      list.add(newThing);
+      list.Add(newThing);
 
       i = i + 1;
     }
