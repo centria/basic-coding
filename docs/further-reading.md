@@ -1,7 +1,7 @@
 ---
 title: "Further reading"
 permalink: /after/
-nav_order: 20
+nav_order: 9001
 published: true
 ---
 
