@@ -1,5 +1,5 @@
 ---
-title: "Part 13 - Further reading"
+title: "Further reading"
 permalink: /after/
 nav_order: 15
 published: true
