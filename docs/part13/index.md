@@ -3,8 +3,6 @@ title: "Further reading"
 permalink: /after/
 nav_order: 20
 published: true
-has_children: true
-has_toc: true
 ---
 
 ## Further reading after the courses
