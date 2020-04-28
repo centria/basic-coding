@@ -19,5 +19,7 @@ In this page will be published further reading and topics about C#. This page is
   * Avalon
 * Web development with C#
   * ASP.NET
+* Visual Studio
+  * IDE for creating everything in C#, rather than having to do it all manually
 
 This list will grow, and might later contain details where to find information.
