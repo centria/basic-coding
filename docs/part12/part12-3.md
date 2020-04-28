@@ -36,6 +36,8 @@ Windows Forms is one type of graphical interface that can be created with C#. We
 
 Let's create our first project.
 
+NOTICE! This, and all the examples in this part, only work on Windows!
+
 * Create a folder where you want your project. The example will be in a folder called **GuiProject**.
 
 * To keep the folder structure neat, create a folder **src** in the project folder, and navigate there.
@@ -54,6 +56,8 @@ You will get a project structure something like this:
     └── src.csproj
 ```
 
-You can now test out your project, with **dotnet run**.
+You can now test out your project, with **dotnet run**. You should get an program that looks like this:
 
 ![Winform1](https://github.com/centria/basic-coding/raw/master/assets/images/part12/winform1.png)
+
+Hooray, the program opens! It does not do anything quite yet. Let's look into our files, and then start adding some functionality.
