@@ -1,5 +1,5 @@
 ---
-title: "Graphical interfaces"
+title: "Graphical user interfaces"
 parent: "Part 12 - Using, Namespaces and Graphical interfaces"
 permalink: /part12/3/
 nav_order: 2
@@ -8,7 +8,7 @@ published: true
 
 # Graphical interfaces
 
-So far, all our programs have used the console, or terminal, as their interface. But in modern operating systems, graphical interfaces are more common. C# has a variety of choices built in for creating graphical programs for Windows environment, and on this course, we'll take a quick glance of one of the options.
+So far, all our programs have used the console, or terminal, as their interface. But in modern operating systems, **graphical user interfaces** (GUIs) are more common. C# has a variety of choices built in for creating graphical programs for Windows environment, and on this course, we'll take a quick glance of one of the options.
 
 ## Creating a new Windows Forms project
 
@@ -285,7 +285,7 @@ namespace src
       // Make it ReadOnly, so it cannot be edited by the users
       this.textBox1.ReadOnly = true;
       // Center to the screen
-      this.textBox1.Location = new System.Drawing.Point((this.Width - textBox1.Width) / 2, (this.Height - textBox1.Height) / 2);
+      this.textBox1.Location = new System.Drawing.Point((this.Width - this.textBox1.Width) / 2, (this.Height - this.textBox1.Height) / 2);
       // Add to controls
       this.Controls.Add(this.textBox1);
     }
@@ -314,7 +314,7 @@ this.textBox1.ReadOnly = true;
 * Prevents the users from editing the textbox. You can take this line away and see what happens.
 
 ```cs
-this.textBox1.Location = new System.Drawing.Point((this.Width - textBox1.Width) / 2, (this.Height - textBox1.Height) / 2);
+this.textBox1.Location = new System.Drawing.Point((this.Width - this.textBox1.Width) / 2, (this.Height - this.textBox1.Height) / 2);
 ```
 
 * Not required, but nice to have. We center an item by giving it a new **Point** as **Location**. Location is the top-left corner of the item.
@@ -326,3 +326,158 @@ this.Controls.Add(this.textBox1);
 * Earlier we mentioned components, which have the non-displayable components. In **Controls**, we store everything we want to show to the user.
 
 ![Winform2](https://github.com/centria/basic-coding/raw/master/assets/images/part12/winform2.png)
+
+Quite a lot of work has gone into getting a simple one-liner into our GUI. Let's create ourselves a button next:
+
+```cs
+// Form1.cs
+
+// plenty of usings
+
+namespace src
+{
+  public partial class Form1 : Form
+  {
+    private TextBox textBox1;
+    // Added the private Button
+    private Button button1;
+
+    public Form1()
+    {
+      InitializeComponent();
+    }
+  }
+}
+```
+
+```cs
+namespace src
+{
+  partial class Form1
+  {
+    private System.ComponentModel.IContainer components = null;
+    protected override void Dispose(bool disposing)
+    {
+      if (disposing && (components != null))
+      {
+        components.Dispose();
+      }
+      base.Dispose(disposing);
+    }
+
+    private void InitializeComponent()
+    {
+      this.components = new System.ComponentModel.Container();
+      this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+      this.ClientSize = new System.Drawing.Size(800, 450);
+      this.Text = "Hello World Application";
+
+      this.textBox1 = new System.Windows.Forms.TextBox();
+
+      this.textBox1.Text = "Hello World";
+      this.textBox1.ReadOnly = true;
+      this.textBox1.Location = new System.Drawing.Point((this.Width - this.textBox1.Width) / 2, (this.Height - this.textBox1.Height) / 2);
+      this.Controls.Add(this.textBox1);
+
+      // Button
+      this.button1 = new System.Windows.Forms.Button();
+      this.button1.Text = "Click me!";
+      this.button1.Click += new System.EventHandler(ShowMessage);
+      Controls.Add(this.button1);
+
+
+    }
+
+    // Button function
+    private void ShowMessage(object sender, System.EventArgs e)
+    {
+      this.textBox1.Text = "Button Clicked!";
+    }
+  }
+}
+```
+
+Let's see what our button's code does:
+
+```cs
+this.button1 = new System.Windows.Forms.Button();
+```
+
+* Initialize a new button object
+
+```cs
+this.button1.Text = "Click me!";
+```
+
+* Give the button a text
+
+```cs
+this.button1.Click += new System.EventHandler(ShowMessage);
+```
+
+* Button's functionality. On a Click, We Call an EventHandler, which takes as a parameter a method.
+
+```cs
+Controls.Add(this.button1);
+```
+
+* Add to Controls so the button is visible
+
+![Winform3](https://github.com/centria/basic-coding/raw/master/assets/images/part12/winform3.png)
+
+```cs
+private void ShowMessage(object sender, System.EventArgs e)
+{
+  this.textBox1.Text = "Button Clicked!";
+}
+```
+
+* Our method takes actually in two parameters, but we give it only one in our code. The second parameter, **System.EventArgs e** refers to Event Arguments, and in this case, it would be mouse click. As a crude simplification, as this is called inside the EventHandler, we can assume the event to be given (i.e. the mouse to be clicked), which triggers the method call.
+
+* In our method, we change our textBox1 text.
+
+![Winform4](https://github.com/centria/basic-coding/raw/master/assets/images/part12/winform4.png)
+
+As we can see, now that we did not give our button any specific location, it will start in the top-left corner. What happens, if we create 2 buttons?
+
+```cs
+// Very ugly copy-paste code
+this.button1 = new System.Windows.Forms.Button();
+this.button1.Text = "Click me!";
+this.button1.Click += new System.EventHandler(ShowMessage);
+Controls.Add(this.button1);
+
+this.button2 = new System.Windows.Forms.Button();
+this.button2.Text = "Click me instead!";
+this.button2.Click += new System.EventHandler(ShowMessage);
+Controls.Add(this.button2);
+```
+
+![Winform5](https://github.com/centria/basic-coding/raw/master/assets/images/part12/winform5.png)
+
+We can see that only the first button is drawn. If we want to have the other button in another location, we have to define the new location. Let's also make some other adjustements to the code:
+
+```cs
+this.button2 = new System.Windows.Forms.Button();
+this.button2.Text = "Click me instead!";
+this.button2.AutoSize = true;
+this.button2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowOnly;
+this.button2.Location = new System.Drawing.Point(this.button1.Width+5, 0);
+this.button2.Click += new System.EventHandler(ShowMessage); 
+Controls.Add(this.button2);
+```
+
+```cs
+this.button2.AutoSize = true;
+this.button2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowOnly;
+```
+
+* With these we allow our button to grow in size, and make the whole text visible.
+
+```cs
+this.button2.Location = new System.Drawing.Point(this.button1.Width+5, 0);
+```
+
+* We define our button location to start from the **button 1 width + 5 pixels**, but keeping the starting height the same. This way, we have our buttons side by side with a little gap between them:
+
+![Winform6](https://github.com/centria/basic-coding/raw/master/assets/images/part12/winform6.png)
