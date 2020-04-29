@@ -503,4 +503,20 @@ private void ShowMessage(object sender, System.EventArgs e)
 
 ## Our first actual program
 
-Let's create something more meaningful with our new skills, like a simple Calculator:
+Let's create something more meaningful with our new skills, like a simple Calculator. 
+
+![Calculator](https://github.com/centria/basic-coding/raw/master/assets/images/part12/calculator.png)
+
+Our project structure looks something like this:
+
+```console
+.
+└── src
+    ├── Calculators
+    │   ├── Calculator.Designer.cs
+    │   └── Calculator.cs
+    ├── GuiCalculator.csproj
+    ├── Program.cs
+    ├── bin
+    └── obj
+```
