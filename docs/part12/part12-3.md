@@ -222,7 +222,7 @@ this.Text = "Form1";
 
 Our other method, **protected override void Dispose(bool disposing)**, is automatically created, and takes care of disposing (or handing over to garbage collection) the elements of our program. It is used for example when we close the program window. For our intents and purposes, we don't have to touch it.
 
-## First functionality
+## First functionality - "Hello World"
 
 As always, we start with a classic "Hello World" in our code. Let's add some content to our window.
 
@@ -326,6 +326,8 @@ this.Controls.Add(this.textBox1);
 * Earlier we mentioned components, which have the non-displayable components. In **Controls**, we store everything we want to show to the user.
 
 ![Winform2](https://github.com/centria/basic-coding/raw/master/assets/images/part12/winform2.png)
+
+## More functionality - Button
 
 Quite a lot of work has gone into getting a simple one-liner into our GUI. Let's create ourselves a button next:
 
@@ -481,3 +483,24 @@ this.button2.Location = new System.Drawing.Point(this.button1.Width+5, 0);
 * We define our button location to start from the **button 1 width + 5 pixels**, but keeping the starting height the same. This way, we have our buttons side by side with a little gap between them:
 
 ![Winform6](https://github.com/centria/basic-coding/raw/master/assets/images/part12/winform6.png)
+
+## EventHandling
+
+We have now already done some event handling with our buttons. But what do events and event handling actually mean?
+
+An event is a message sent by an object to signal the occurrence of an action. The action can be caused by **user interaction**, such as a **button click**, or it can result from some other program logic, such as changing a property’s value, like we did with our text field earlier. The object that raises the event is called the **event sender**. The event sender doesn't know which object or method will receive (handle) the events it raises. The event is typically a member of the event sender; for example, the **Click event** is a member of the **Button class**.
+
+**To respond to an event**, you define an event handler method in the event receiver. This method must match the signature of the delegate for the event you are handling. In the event handler, you perform the actions that are required when the event is raised, such as collecting user input after the user clicks a button. To receive notifications when the event occurs, your event handler method must subscribe to the event.
+
+The following example shows an event handler method named **ShowMessage** that matches the signature for the EventHandler delegate. The method subscribes to the **Button.Click** event.
+
+```cs
+private void ShowMessage(object sender, System.EventArgs e)
+{
+  this.textBox1.Text = "Button Clicked!";
+}
+```
+
+## Our first actual program
+
+Let's create something more meaningful with our new skills, like a simple Calculator:
