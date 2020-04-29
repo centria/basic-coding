@@ -520,3 +520,295 @@ Our project structure looks something like this:
     ├── bin
     └── obj
 ```
+
+[**And you can find the code from here!**](https://github.com/centria/coding-exercises/tree/master/project_examples/GuiCalculator/src), which is part of the exercise repository.
+
+We shall not have the whole code here, but you can find it from the link above. Let's take a look at some of the highlights:
+
+```cs
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace GuiCalculator
+{
+  static class Program
+  {
+    [STAThread]
+    static void Main()
+    {
+      Application.SetHighDpiMode(HighDpiMode.SystemAware);
+      Application.EnableVisualStyles();
+      Application.SetCompatibleTextRenderingDefault(false);
+      Application.Run(new Calculator());
+    }
+  }
+}
+```
+
+* Our Main class is still very nice and clean, as it should. Even though our program is larger, the Main has been kept simple.
+
+
+```cs
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace GuiCalculator
+{
+  public partial class Calculator : Form
+  {
+    // Calculation variables
+    private double accumulator = 0;
+    private string lastOperation;
+
+    // All the buttons are already initialized here
+    private Button button0 = new Button();
+    private Button button1 = new Button();
+    private Button button2 = new Button();
+    /* 
+    . . .
+
+    ALL THE BUTTONS
+    */
+    private TextBox results = new TextBox();
+
+    // Very clean constructor
+    public Calculator()
+    {
+      InitializeComponent();
+    }
+  }
+}
+```
+
+```cs
+private void InitializeComponent()
+{
+  this.components = new System.ComponentModel.Container();
+  this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+  this.ClientSize = new System.Drawing.Size(300, 300);
+  // Text at the top
+  this.Text = "Calculator";
+
+  // Button sizes
+  int buttonWidth = 60;
+  int buttonHeight = 60;
+
+  // Results box
+  this.results.Text = "0";
+  this.results.Font = new System.Drawing.Font("Arial", 30);
+  this.results.Width = 300;
+  // Move text to right side
+  this.results.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+  this.results.ReadOnly = true;
+  this.results.Location = new System.Drawing.Point(0, 0);
+
+  // Define button 7, top-left
+  this.button7.Location = new System.Drawing.Point(0, buttonHeight);
+  this.button7.Font = new System.Drawing.Font("Arial", 20);
+  this.button7.Height = buttonHeight;
+  this.button7.Width = buttonWidth;
+  this.button7.Text = "7";
+  this.button7.Click += new System.EventHandler(AddToString);
+  
+  /* 
+  
+  AND A LOT MORE CODE HERE 
+  
+  */
+  
+  // Add all the buttons to the Controls
+  this.Controls.Add(this.results);
+
+  this.Controls.Add(button0);
+  this.Controls.Add(button1);
+  /*
+  Add all the items to the Controls. ALL OF THEM.
+  */
+```
+
+* First we create our program window like previously
+* Then we define couple of variables to be used in our layout
+* Define the TextBox for results and calculations
+  * Initial text is "0"
+  * Larger font
+  * Width set to whole program
+  * Users cannot edit the text
+  * Start from top-most-corner (default)
+* Define the first button, as it starts from top-left after the results box
+  * Start from below the TextBox
+  * Larger font
+  * Use the variables to make it a square
+  * Define what reads on the button
+  * Add a handler
+
+You can read the rest of the button codes from the repository. They are all quite alike. Most interesting are our event handlers:
+
+```cs
+private void AddToString(object sender, System.EventArgs e)
+{
+  string number = (sender as System.Windows.Forms.Button).Text;
+  if ((results.Text.Contains(".") && number == ".") || (results.Text == "0" && number == "."))
+  {
+    return;
+  }
+  if (results.Text == "0")
+  {
+    results.Text = number;
+  }
+  else
+  {
+    results.Text += number;
+  }
+}
+```
+
+* With this event handler we add the numbers and decimals to our TextBox.Text.
+  * To keep numbers clean, we check where we can add a decimal
+    * Not in the beginning of the string, and only one per number
+* If the TextBox.Text is 0, replace with the input number
+* Else add to the end
+
+```cs
+private void CalculateResult(object sender, System.EventArgs e)
+{
+  string operation = (sender as System.Windows.Forms.Button).Text;
+  double currentValue = System.Convert.ToDouble(results.Text, System.Globalization.CultureInfo.InvariantCulture);
+  if (operation == "C")
+  {
+    this.accumulator = 0;
+  }
+  else if (lastOperation == "+")
+  {
+    accumulator += currentValue;
+  }
+  else if (lastOperation == "-")
+  {
+    accumulator -= currentValue;
+  }
+  else if (lastOperation == "*")
+  {
+    accumulator *= currentValue;
+  }
+  else if (lastOperation == "/")
+  {
+    accumulator /= currentValue;
+  }
+  else
+  {
+    accumulator = currentValue;
+  }
+
+  lastOperation = operation;
+
+  if (operation == "=")
+  {
+    results.Text = accumulator.ToString();
+  }
+  else
+  {
+    results.Text = "0";
+  }
+}
+```
+
+* This is more tricy. It goes through all our operations buttons.
+
+```cs
+string operation = (sender as System.Windows.Forms.Button).Text;
+```
+
+* We save our operation name into a string, by parsing the name from the **Button.Text**. The **sender** is recognized from the method parameter.
+
+```cs
+double currentValue = System.Convert.ToDouble(results.Text, System.Globalization.CultureInfo.InvariantCulture);
+```
+
+* We parse the variable **currentValue** from the **results.Text**, into a double.
+
+```cs
+  if (operation == "C")
+  {
+    this.accumulator = 0;
+  }
+```
+
+* If we want to reset our calculation, we press "C". It sets the accumulated total to 0.
+
+```cs
+else if (lastOperation == "+")
+{
+  accumulator += currentValue;
+}
+```
+
+* With "+" we add our **currentValue** to the accumulated total. Rest of the operations function similarly, according to their signs.
+
+* We actually use the variable **lastOperation** instead of the **operation**, since we only want to show the result if there is already a previous operation done.
+  * For example, if we input to our calculator
+
+```console
+1
+2
++
+3
++
+3
+=
+```
+
+We will see the **results** show us
+
+```cs
+12
+0
+15
+0
+18
+```
+
+So the previous result is only shown when the next operation is pressed. Remember, that even the total is an operator.
+
+```cs
+lastOperation = operation;
+
+if (operation == "=")
+{
+  results.Text = accumulator.ToString();
+}
+else
+{
+  results.Text = "0";
+}
+```
+
+* After the operation, we save our operation to the variable **lastOperation**, so we can check it for the next operation press.
+
+* If the operation was "=", we show the total of the calculation so far. Otherwise, we show 0 when a operator is clicked, so we are waiting for another input.
+
+
+## Conclusion
+
+Graphical interfaces require quite much code to achieve even a simple program. The applications get quite complicated quite fast. This part was meant to demonstrate the possibilities of GUI, not be an exhaustive guide.
+
+There are easier ways of doing GUI for C#, such as [**using Visual Basic**](https://docs.microsoft.com/en-us/visualstudio/ide/create-a-visual-basic-winform-in-visual-studio?view=vs-2019). Learning these is left for you.
+
+
+
+
+
+
+
+
+
+
+
