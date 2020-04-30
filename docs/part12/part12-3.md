@@ -501,6 +501,23 @@ private void ShowMessage(object sender, System.EventArgs e)
 }
 ```
 
+An event handler can also have options. For example, our two buttons can have same handler but different functionality:
+
+```cs
+private void ShowMessage(object sender, System.EventArgs e)
+{
+  string buttonName = (sender as System.Windows.Forms.Button).Text;
+  if (buttonName == "Click me!")
+  {
+    this.textBox1.Text = "Button Clicked!";
+  }
+  else
+  {
+    this.textBox1.Text = "Other Button Clicked!";
+  }
+}
+```
+
 ## Our first actual program
 
 Let's create something more meaningful with our new skills, like a simple Calculator. 
