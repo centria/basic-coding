@@ -54,7 +54,7 @@ namespace MasterProject
     void Master()
     {
       // Use the alias
-      Builder bob = new Project.Builder();
+      Project.Builder bob = new Project.Builder();
     }
   }
   namespace Developers
