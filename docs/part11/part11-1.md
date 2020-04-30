@@ -58,6 +58,16 @@ int temperature = weatherMan.Next(81) - 30;
 Console.WriteLine(temperature);
 ```
 
+A more reasonable way to do this, how ever, is to use **Random.Next(lowerLimit, upperLimit)**, like follows:
+
+```cs
+Random weatherMan = new Random();
+int temperature = weatherMan.Next(-30, 51);
+Console.WriteLine(temperature);
+```
+
+NOTICE! The lowerLimit is inclusive but the upperLimit is always exclusive, so we are still getting random between -30 and 50!
+
 A Random object can also be used to create random doubles. These can for example be used for calculating probabilities. Computers often simulate probabilities using doubles between \[0..1\].
 
 The **NextDouble** method of the Random class creates random doubles. Let's assume the weather follows these probabilities:
