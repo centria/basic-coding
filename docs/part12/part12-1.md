@@ -10,7 +10,7 @@ published: true
 
 We have used **namespaces** in our exercises and examples since the beginning of the course. But what are they, exactly?
 
-Namespaces have two main functions in C# programming. ExampleClass, they are used to organize classes into coherent groups. Second, they are used to control the scope and visibility of class and method names in large programs.
+Namespaces have two main functions in C# programming. First, they are used to organize classes into coherent groups. Second, they are used to control the scope and visibility of class and method names in large programs.
 
 ## Using namespaces
 
